@@ -399,6 +399,10 @@ body.lock .mbar{display:none!important}
 /* Reference products are viewable in the mock catalog without a cart action. */
 .art > .reference-photo{width:100%;height:100%;object-fit:contain;display:block;background:#161a17}
 .art > .flower-photo{object-fit:cover}
+.art > .stoneys-photo{padding:12px}
+.prod .art:has(> .stoneys-photo){aspect-ratio:1}
+.prod .art > .stoneys-photo,.qv .art > .stoneys-photo{position:absolute;inset:0}
+.qv .art:has(> .stoneys-photo){position:relative}
 .reference-thumb{position:relative;aspect-ratio:2/3;overflow:hidden;background:#161a17;border-radius:12px}
 .reference-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#161a17}
 .reference-thumb .reference-crop{width:100%;height:100%;background-image:url('assets/straight-goods-set.jpg');background-repeat:no-repeat}
@@ -484,7 +488,7 @@ html:not([data-catalog-ready]) #shop:has(#shop-prerolls:target) #count{display:n
       </div>
     </div>
     <div class="stack" aria-hidden="true">
-      <div class="card c1"><div class="art" id="h1"><img class="reference-photo flower-photo" src="assets/flower-blue-dream.jpg" alt="Blue Dream" loading="lazy"></div><span class="tag">Blue Dream · 1 oz · C<span class="tag">40</span></div>
+      <div class="card c1"><div class="art" id="h1"><img class="reference-photo flower-photo" src="assets/flower-blue-dream.jpg" alt="Blue Dream" loading="lazy"></div><span class="tag">Blue Dream · 1 oz · C$140</span></div>
       <div class="card c2"><div class="art" id="h2"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" style="display:block"><defs><radialGradient id="gh10" cx="50%" cy="35%" r="80%"><stop offset="0" stop-color="hsl(38,55%,26%)"/><stop offset="1" stop-color="hsl(68,60%,14%)"/></radialGradient></defs><rect width="200" height="200" fill="url(#gh10)"/><circle cx="160" cy="40" r="50" fill="hsl(38,70%,62%)" opacity=".08"/><g transform="translate(100 108)"><ellipse cx="0" cy="48" rx="62" ry="9" fill="#000" opacity=".35"/>
     <path d="M-62 -16L-24 -46L52 -34L64 8L30 44L-46 36z" fill="#e6a315"/>
     <path d="M-62 -16L-24 -46L52 -34L-6 -6z" fill="#ffd462"/>
@@ -562,7 +566,7 @@ html:not([data-catalog-ready]) #shop:has(#shop-prerolls:target) #count{display:n
     <div class="count" id="count">34 products</div>
     <div class="grid4" id="grid">
    <article class="prod" data-id="24" data-category="Edibles" style="animation-delay:0ms" tabindex="0">
-     <div class="art"><img class="reference-photo" src="assets/stoneys-blue-raspberry.jpg" alt="Stoneys Blue Raspberry" loading="lazy"><span class="tpill Gummies">Gummies</span></div>
+     <div class="art"><img class="reference-photo stoneys-photo" src="assets/stoneys-blue-raspberry-stock.png" alt="Stoneys Blue Raspberry" loading="lazy"><span class="tpill Gummies">Gummies</span></div>
      <div class="body"><span class="brand">Vancanna</span><h3>Stoneys Blue Raspberry</h3>
        <div class="potency"><span><b>500 mg THC on pack</b></span></div>
        <div class="foot"><div class="price"><small></small>$60.00<small> · Single pouch</small></div><button class="add" data-add="24" aria-label="Add Stoneys Blue Raspberry to bag">+</button></div>
@@ -972,7 +976,7 @@ const P=[
  {id:20,name:'Hybrid Pre-Roll 5-Pack',brand:'Highline',cat:'Prerolls',type:'Hybrid',thc:23.5,cbd:.1,hue:130,pop:86,opts:[['5 × 0.5g',28]],fx:['Balanced','Social'],desc:'Five slow-burning half-gram joints. Ready to share, glass tip included.'},
  {id:21,name:'Infused Blunt · Zkittlez',brand:'Highline',cat:'Prerolls',type:'Indica',thc:38.2,cbd:.1,hue:320,badge:'Strong',pop:75,opts:[['1 × 1.5g',18]],fx:['Heavy','Sleepy'],desc:'Flower rolled with live resin and dusted in kief. One is plenty.'},
  {id:22,name:'Daytime Sativa Pre-Roll',brand:'Sunrise Gardens',cat:'Prerolls',type:'Sativa',thc:21.0,cbd:.1,hue:95,pop:68,opts:[['1 × 1g',9],['3 × 1g',24]],fx:['Focused','Uplifted'],desc:'Single-strain 1g pre-roll for walks, hikes and good conversations.'},
- {id:24,name:'Stoneys Blue Raspberry',brand:'Vancanna',cat:'Edibles',type:'Gummies',thc:0,cbd:0,hue:200,pop:95,opts:[['Single pouch',60]],fx:[],desc:'One Blue Raspberry pouch. The photographed packaging shows 10 pieces, 50 mg THC each and 500 mg THC total.',reference:true,potencyLabel:'500 mg THC on pack',photo:'assets/stoneys-blue-raspberry.jpg'}
+ {id:24,name:'Stoneys Blue Raspberry',brand:'Vancanna',cat:'Edibles',type:'Gummies',thc:0,cbd:0,hue:200,pop:95,opts:[['Single pouch',60]],fx:[],desc:'One Blue Raspberry pouch. The photographed packaging shows 10 pieces, 50 mg THC each and 500 mg THC total.',reference:true,potencyLabel:'500 mg THC on pack',photo:'assets/stoneys-blue-raspberry-stock.png'}
 ];
 const referenceVariants=[{"name":"Rockstar","crop":[86,230,204,268],"image":"assets/rockstar.jpg"},{"name":"Blueberry Cookies","crop":[283,233,180,267],"image":"assets/blueberry-cookies.jpg"},{"name":"Gas Mask","crop":[459,240,176,260],"image":"assets/gas-mask.jpg"},{"name":"Grape Ice","crop":[635,238,167,258]},{"name":"Double Mango","crop":[795,237,168,253],"image":"assets/double-mango.jpg"},{"name":"Red Lebanese Hash","crop":[954,237,159,246],"image":"assets/red-lebanese-hash.jpg"},{"name":"Tropical Melon","crop":[44,504,229,315],"image":"assets/tropical-melon.jpg"},{"name":"Rocket Pop","crop":[258,504,203,305],"image":"assets/rocket-pop.jpg"},{"name":"Bubba Kush","crop":[458,505,186,302],"image":"assets/bubba-kush.jpg"},{"name":"Godfather OG","crop":[650,499,186,300]},{"name":"99 Problems","crop":[826,496,175,291],"image":"assets/99-problems.jpg"},{"name":"Double Bubble OG","crop":[990,490,173,290],"image":"assets/double-bubble-og.jpg"}];
 P.push(...referenceVariants.map((variant,index)=>({
@@ -1008,7 +1012,7 @@ function variantPhoto(variant){
 }
 function art(p,id){
   if(p.variant)return variantPhoto(p.variant);
-  if(p.photo)return `<img class="reference-photo${p.cat==='Flower'?' flower-photo':''}" src="${p.photo}" alt="${p.name}" loading="lazy">`;
+  if(p.photo)return `<img class="reference-photo${p.cat==='Flower'?' flower-photo':p.id===24?' stoneys-photo':''}" src="${p.photo}" alt="${p.name}" loading="lazy">`;
   const h=p.hue, c1=`hsl(${h},55%,26%)`, c2=`hsl(${(h+30)%360},60%,14%)`, a=`hsl(${h},70%,62%)`, b=`hsl(${(h+20)%360},75%,48%)`, d=`hsl(${h},60%,35%)`;
   const g=`g${id}${p.id||p.cat}`;
   const bg=`<defs><radialGradient id="${g}" cx="50%" cy="35%" r="80%"><stop offset="0" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/></radialGradient></defs><rect width="200" height="200" fill="url(#${g})"/><circle cx="160" cy="40" r="50" fill="${a}" opacity=".08"/>`;
