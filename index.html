@@ -98,6 +98,8 @@ section{padding:84px 0}
 .cat{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--panel);text-align:left;transition:.2s}
 .cat:hover{transform:translateY(-4px);border-color:var(--accent)}
 .cat .art{aspect-ratio:1/1}
+.cat .art,.qv .art{position:relative}
+.coming-soon-banner{position:absolute;inset:0;display:grid;place-items:center;padding:12px;background:rgba(9,15,11,.74);color:var(--text);font:700 clamp(20px,2.5vw,32px)/1.05 var(--serif);text-align:center;text-wrap:balance}
 .cat .lbl{padding:12px 14px 14px}
 .cat b{display:block;font-family:var(--serif);font-size:19px}
 .cat small{color:var(--mut);font-size:12px}
@@ -511,7 +513,7 @@ html:not([data-catalog-ready]) #shop:has(#shop-prerolls:target) #count{display:n
     <path d="M-62 -16L-24 -46L52 -34L-6 -6z" fill="#ffd462"/>
     <path d="M-6 -6L52 -34L64 8L30 44z" fill="#c27f08"/>
     <path d="M-62 -16L-6 -6L30 44L-46 36z" fill="#f0b52a"/>
-    <path d="M-30 -30l22 14M10 -26l-6 40M-40 8l30 6" stroke="#fff" stroke-width="2.5" opacity=".5" fill="none" stroke-linecap="round"/></g></svg></div><div class="lbl"><b>Shatter</b><small>3 products · Shatter, wax, resin</small></div></a><a href="#shop-carts" class="cat" data-cat="Carts"><div class="art"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" style="display:block"><defs><radialGradient id="gcatCarts" cx="50%" cy="35%" r="80%"><stop offset="0" stop-color="hsl(200,55%,26%)"/><stop offset="1" stop-color="hsl(230,60%,14%)"/></radialGradient></defs><rect width="200" height="200" fill="url(#gcatCarts)"/><circle cx="160" cy="40" r="50" fill="hsl(200,70%,62%)" opacity=".08"/><ellipse cx="100" cy="166" rx="26" ry="6" fill="#000" opacity=".35"/>
+    <path d="M-30 -30l22 14M10 -26l-6 40M-40 8l30 6" stroke="#fff" stroke-width="2.5" opacity=".5" fill="none" stroke-linecap="round"/></g></svg><span class="coming-soon-banner">Coming Soon</span></div><div class="lbl"><b>Shatter</b><small>3 products · Shatter, wax, resin</small></div></a><a href="#shop-carts" class="cat" data-cat="Carts"><div class="art"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" style="display:block"><defs><radialGradient id="gcatCarts" cx="50%" cy="35%" r="80%"><stop offset="0" stop-color="hsl(200,55%,26%)"/><stop offset="1" stop-color="hsl(230,60%,14%)"/></radialGradient></defs><rect width="200" height="200" fill="url(#gcatCarts)"/><circle cx="160" cy="40" r="50" fill="hsl(200,70%,62%)" opacity=".08"/><ellipse cx="100" cy="166" rx="26" ry="6" fill="#000" opacity=".35"/>
     <rect x="78" y="40" width="44" height="22" rx="6" fill="#d9d9d4"/><rect x="82" y="62" width="36" height="14" fill="#bdbdb6"/>
     <rect x="76" y="76" width="48" height="76" rx="8" fill="hsl(220,75%,48%)" opacity=".96"/><rect x="82" y="84" width="14" height="60" rx="6" fill="#fff" opacity=".28"/>
     <rect x="76" y="76" width="48" height="76" rx="8" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="2"/>
@@ -522,7 +524,7 @@ html:not([data-catalog-ready]) #shop:has(#shop-prerolls:target) #count{display:n
     <circle cx="0" cy="62" r="4" fill="hsl(285,70%,62%)"/></g></svg></div><div class="lbl"><b>Disposable Pens</b><small>15 products · All-in-one vapes</small></div></a><a href="#shop-prerolls" class="cat" data-cat="Prerolls"><div class="art"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" style="display:block"><defs><radialGradient id="gcatc" cx="50%" cy="35%" r="80%"><stop offset="0" stop-color="hsl(95,55%,26%)"/><stop offset="1" stop-color="hsl(125,60%,14%)"/></radialGradient></defs><rect width="200" height="200" fill="url(#gcatc)"/><circle cx="160" cy="40" r="50" fill="hsl(95,70%,62%)" opacity=".08"/><g transform="translate(100 100) rotate(-40)"><ellipse cx="0" cy="68" rx="14" ry="4" fill="#000" opacity=".3"/>
     <path d="M-11 -70h22l9 140h-40z" fill="#ece3cd"/><path d="M-11 -70h22l1 12h-24z" fill="#cdbf9b"/>
     <path d="M-6 -62v120M2 -62v120" stroke="#c9bd9e" stroke-width="1.2"/>
-    <rect x="-10" y="-30" width="20" height="9" fill="hsl(95,70%,62%)" opacity=".85"/><rect x="-9" y="62" width="18" height="12" rx="3" fill="#d5c9a8"/></g></svg></div><div class="lbl"><b>Pre-Rolls</b><small>3 products · Singles & packs</small></div></a></div>
+    <rect x="-10" y="-30" width="20" height="9" fill="hsl(95,70%,62%)" opacity=".85"/><rect x="-9" y="62" width="18" height="12" rx="3" fill="#d5c9a8"/></g></svg><span class="coming-soon-banner">Coming Soon</span></div><div class="lbl"><b>Pre-Rolls</b><small>3 products · Singles & packs</small></div></a></div>
   </div>
 </section>
 
@@ -531,7 +533,7 @@ html:not([data-catalog-ready]) #shop:has(#shop-prerolls:target) #count{display:n
     <div class="deals">
       <div class="deal d1"><div><span class="eyebrow" style="color:inherit;opacity:.7">First order</span><h3>20% off your first delivery</h3><p>Applies to everything in the shop. Once per customer.</p></div><span class="code">WELCOME20</span></div>
       <div class="deal d2"><div><span class="eyebrow" style="color:#b9adff">Subscribe</span><h3>Save 10% on repeat orders</h3><p>Weekly, every 2 weeks, monthly or every 2 months. Cancel anytime.</p></div><span class="code">AUTO-APPLIED</span></div>
-      <div class="deal d3"><div><span class="eyebrow" style="color:var(--amber)">Bundle</span><h3>Free pre-roll over $200</h3><p>Spend $200+ and we'll tuck one in the parcel.</p></div><span class="code">AUTO-ADDED</span></div>
+      <div class="deal d3"><div><span class="eyebrow" style="color:var(--amber)">Bundle</span><h3>Free pre-roll over $200</h3><p>This offer will be available when Pre-Rolls launch.</p></div><span class="code">Coming Soon</span></div>
     </div>
   </div>
 </section>
@@ -668,40 +670,40 @@ html:not([data-catalog-ready]) #shop:has(#shop-prerolls:target) #count{display:n
        <div class="foot"><div class="price"><small></small>$80.00<small> · 1 device</small></div><button class="add" data-add="36" aria-label="Add Double Bubble OG · 3 g Disposable Vape to bag">+</button></div>
      </div></article>
    <article class="prod" data-id="6" data-category="Edibles" style="animation-delay:360ms" tabindex="0">
-     <div class="art"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" style="display:block"><defs><radialGradient id="gp6" cx="50%" cy="35%" r="80%"><stop offset="0" stop-color="hsl(20,55%,26%)"/><stop offset="1" stop-color="hsl(50,60%,14%)"/></radialGradient></defs><rect width="200" height="200" fill="url(#gp6)"/><circle cx="160" cy="40" r="50" fill="hsl(20,70%,62%)" opacity=".08"/><g transform="translate(66 78) rotate(-12)"><path d="M-18 -4a14 14 0 0 1 14-16c8 0 12 6 18 6s8-6 14-4c10 4 10 22 0 30-6 6-10 14-24 14s-20-12-22-18c-2-4-2-8 0-12z" fill="hsl(20,70%,62%)"/><path d="M-12 -10c6-8 16-6 22-2" stroke="#fff" stroke-width="3" opacity=".35" fill="none" stroke-linecap="round"/><circle cx="-6" cy="10" r="2" fill="#fff" opacity=".6"/><circle cx="8" cy="12" r="2" fill="#fff" opacity=".6"/><circle cx="0" cy="2" r="2" fill="#fff" opacity=".6"/></g><g transform="translate(128 70) rotate(14)"><path d="M-18 -4a14 14 0 0 1 14-16c8 0 12 6 18 6s8-6 14-4c10 4 10 22 0 30-6 6-10 14-24 14s-20-12-22-18c-2-4-2-8 0-12z" fill="#ffd166"/><path d="M-12 -10c6-8 16-6 22-2" stroke="#fff" stroke-width="3" opacity=".35" fill="none" stroke-linecap="round"/><circle cx="-6" cy="10" r="2" fill="#fff" opacity=".6"/><circle cx="8" cy="12" r="2" fill="#fff" opacity=".6"/><circle cx="0" cy="2" r="2" fill="#fff" opacity=".6"/></g><g transform="translate(100 128) rotate(0)"><path d="M-18 -4a14 14 0 0 1 14-16c8 0 12 6 18 6s8-6 14-4c10 4 10 22 0 30-6 6-10 14-24 14s-20-12-22-18c-2-4-2-8 0-12z" fill="hsl(40,75%,48%)"/><path d="M-12 -10c6-8 16-6 22-2" stroke="#fff" stroke-width="3" opacity=".35" fill="none" stroke-linecap="round"/><circle cx="-6" cy="10" r="2" fill="#fff" opacity=".6"/><circle cx="8" cy="12" r="2" fill="#fff" opacity=".6"/><circle cx="0" cy="2" r="2" fill="#fff" opacity=".6"/></g><g transform="translate(150 132) rotate(-18)"><path d="M-18 -4a14 14 0 0 1 14-16c8 0 12 6 18 6s8-6 14-4c10 4 10 22 0 30-6 6-10 14-24 14s-20-12-22-18c-2-4-2-8 0-12z" fill="#ff6b8b"/><path d="M-12 -10c6-8 16-6 22-2" stroke="#fff" stroke-width="3" opacity=".35" fill="none" stroke-linecap="round"/><circle cx="-6" cy="10" r="2" fill="#fff" opacity=".6"/><circle cx="8" cy="12" r="2" fill="#fff" opacity=".6"/><circle cx="0" cy="2" r="2" fill="#fff" opacity=".6"/></g><g transform="translate(48 132) rotate(16)"><path d="M-18 -4a14 14 0 0 1 14-16c8 0 12 6 18 6s8-6 14-4c10 4 10 22 0 30-6 6-10 14-24 14s-20-12-22-18c-2-4-2-8 0-12z" fill="#7bdff2"/><path d="M-12 -10c6-8 16-6 22-2" stroke="#fff" stroke-width="3" opacity=".35" fill="none" stroke-linecap="round"/><circle cx="-6" cy="10" r="2" fill="#fff" opacity=".6"/><circle cx="8" cy="12" r="2" fill="#fff" opacity=".6"/><circle cx="0" cy="2" r="2" fill="#fff" opacity=".6"/></g></svg><span class="badge">Best seller</span><span class="tpill Hybrid">Hybrid</span></div>
+     <div class="art"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" style="display:block"><defs><radialGradient id="gp6" cx="50%" cy="35%" r="80%"><stop offset="0" stop-color="hsl(20,55%,26%)"/><stop offset="1" stop-color="hsl(50,60%,14%)"/></radialGradient></defs><rect width="200" height="200" fill="url(#gp6)"/><circle cx="160" cy="40" r="50" fill="hsl(20,70%,62%)" opacity=".08"/><g transform="translate(66 78) rotate(-12)"><path d="M-18 -4a14 14 0 0 1 14-16c8 0 12 6 18 6s8-6 14-4c10 4 10 22 0 30-6 6-10 14-24 14s-20-12-22-18c-2-4-2-8 0-12z" fill="hsl(20,70%,62%)"/><path d="M-12 -10c6-8 16-6 22-2" stroke="#fff" stroke-width="3" opacity=".35" fill="none" stroke-linecap="round"/><circle cx="-6" cy="10" r="2" fill="#fff" opacity=".6"/><circle cx="8" cy="12" r="2" fill="#fff" opacity=".6"/><circle cx="0" cy="2" r="2" fill="#fff" opacity=".6"/></g><g transform="translate(128 70) rotate(14)"><path d="M-18 -4a14 14 0 0 1 14-16c8 0 12 6 18 6s8-6 14-4c10 4 10 22 0 30-6 6-10 14-24 14s-20-12-22-18c-2-4-2-8 0-12z" fill="#ffd166"/><path d="M-12 -10c6-8 16-6 22-2" stroke="#fff" stroke-width="3" opacity=".35" fill="none" stroke-linecap="round"/><circle cx="-6" cy="10" r="2" fill="#fff" opacity=".6"/><circle cx="8" cy="12" r="2" fill="#fff" opacity=".6"/><circle cx="0" cy="2" r="2" fill="#fff" opacity=".6"/></g><g transform="translate(100 128) rotate(0)"><path d="M-18 -4a14 14 0 0 1 14-16c8 0 12 6 18 6s8-6 14-4c10 4 10 22 0 30-6 6-10 14-24 14s-20-12-22-18c-2-4-2-8 0-12z" fill="hsl(40,75%,48%)"/><path d="M-12 -10c6-8 16-6 22-2" stroke="#fff" stroke-width="3" opacity=".35" fill="none" stroke-linecap="round"/><circle cx="-6" cy="10" r="2" fill="#fff" opacity=".6"/><circle cx="8" cy="12" r="2" fill="#fff" opacity=".6"/><circle cx="0" cy="2" r="2" fill="#fff" opacity=".6"/></g><g transform="translate(150 132) rotate(-18)"><path d="M-18 -4a14 14 0 0 1 14-16c8 0 12 6 18 6s8-6 14-4c10 4 10 22 0 30-6 6-10 14-24 14s-20-12-22-18c-2-4-2-8 0-12z" fill="#ff6b8b"/><path d="M-12 -10c6-8 16-6 22-2" stroke="#fff" stroke-width="3" opacity=".35" fill="none" stroke-linecap="round"/><circle cx="-6" cy="10" r="2" fill="#fff" opacity=".6"/><circle cx="8" cy="12" r="2" fill="#fff" opacity=".6"/><circle cx="0" cy="2" r="2" fill="#fff" opacity=".6"/></g><g transform="translate(48 132) rotate(16)"><path d="M-18 -4a14 14 0 0 1 14-16c8 0 12 6 18 6s8-6 14-4c10 4 10 22 0 30-6 6-10 14-24 14s-20-12-22-18c-2-4-2-8 0-12z" fill="#7bdff2"/><path d="M-12 -10c6-8 16-6 22-2" stroke="#fff" stroke-width="3" opacity=".35" fill="none" stroke-linecap="round"/><circle cx="-6" cy="10" r="2" fill="#fff" opacity=".6"/><circle cx="8" cy="12" r="2" fill="#fff" opacity=".6"/><circle cx="0" cy="2" r="2" fill="#fff" opacity=".6"/></g></svg><span class="coming-soon-banner">Coming Soon</span></div>
      <div class="body"><span class="brand">Cloud Kitchen</span><h3>Sour Rush Gummies</h3>
        <div class="potency"><span>THC <b>5mg</b></span></div>
-       <div class="foot"><div class="price"><small>from </small>$7.00<small> · 2 pack</small></div><button class="add" data-add="6" aria-label="Add Sour Rush Gummies to bag">+</button></div>
+
      </div></article>
    <article class="prod" data-id="17" data-category="Pens" style="animation-delay:360ms" tabindex="0">
      <div class="art"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" style="display:block"><defs><radialGradient id="gp17" cx="50%" cy="35%" r="80%"><stop offset="0" stop-color="hsl(45,55%,26%)"/><stop offset="1" stop-color="hsl(75,60%,14%)"/></radialGradient></defs><rect width="200" height="200" fill="url(#gp17)"/><circle cx="160" cy="40" r="50" fill="hsl(45,70%,62%)" opacity=".08"/><g transform="translate(100 100) rotate(32)"><ellipse cx="0" cy="84" rx="16" ry="4" fill="#000" opacity=".3"/>
     <rect x="-17" y="-76" width="34" height="14" rx="6" fill="#222"/><rect x="-19" y="-64" width="38" height="140" rx="16" fill="hsl(65,75%,48%)"/>
     <rect x="-13" y="-52" width="9" height="108" rx="4.5" fill="#fff" opacity=".28"/>
     <text transform="rotate(90)" x="-4" y="5" font-family="Fraunces,serif" font-weight="800" font-size="14" fill="#fff" opacity=".9" letter-spacing="2">CLOUD</text>
-    <circle cx="0" cy="62" r="4" fill="hsl(45,70%,62%)"/></g></svg><span class="badge">Best seller</span><span class="tpill Sativa">Sativa</span></div>
+    <circle cx="0" cy="62" r="4" fill="hsl(45,70%,62%)"/></g></svg><span class="coming-soon-banner">Coming Soon</span></div>
      <div class="body"><span class="brand">Puff Co.</span><h3>Cloud Pen · Mango Haze</h3>
        <div class="potency"><span>THC <b>90%</b></span></div>
-       <div class="foot"><div class="price"><small>from </small>$48.00<small> · 1g disposable</small></div><button class="add" data-add="17" aria-label="Add Cloud Pen · Mango Haze to bag">+</button></div>
+
      </div></article>
    <article class="prod" data-id="13" data-category="Carts" style="animation-delay:360ms" tabindex="0">
      <div class="art"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" style="display:block"><defs><radialGradient id="gp13" cx="50%" cy="35%" r="80%"><stop offset="0" stop-color="hsl(15,55%,26%)"/><stop offset="1" stop-color="hsl(45,60%,14%)"/></radialGradient></defs><rect width="200" height="200" fill="url(#gp13)"/><circle cx="160" cy="40" r="50" fill="hsl(15,70%,62%)" opacity=".08"/><ellipse cx="100" cy="166" rx="26" ry="6" fill="#000" opacity=".35"/>
     <rect x="78" y="40" width="44" height="22" rx="6" fill="#d9d9d4"/><rect x="82" y="62" width="36" height="14" fill="#bdbdb6"/>
     <rect x="76" y="76" width="48" height="76" rx="8" fill="hsl(35,75%,48%)" opacity=".96"/><rect x="82" y="84" width="14" height="60" rx="6" fill="#fff" opacity=".28"/>
     <rect x="76" y="76" width="48" height="76" rx="8" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="2"/>
-    <rect x="82" y="152" width="36" height="12" fill="#c3a15c"/><path d="M96 164v6h8v-6z" fill="#8a7440"/></svg><span class="tpill Hybrid">Hybrid</span></div>
+    <rect x="82" y="152" width="36" height="12" fill="#c3a15c"/><path d="M96 164v6h8v-6z" fill="#8a7440"/></svg><span class="coming-soon-banner">Coming Soon</span></div>
      <div class="body"><span class="brand">Voltage</span><h3>Sunset Sherbet Cart</h3>
        <div class="potency"><span>THC <b>88.1%</b></span><span>CBD <b>0.1%</b></span></div>
-       <div class="foot"><div class="price"><small>from </small>$32.00<small> · 0.5g</small></div><button class="add" data-add="13" aria-label="Add Sunset Sherbet Cart to bag">+</button></div>
+
      </div></article>
    <article class="prod" data-id="16" data-category="Carts" style="animation-delay:360ms" tabindex="0">
      <div class="art"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" style="display:block"><defs><radialGradient id="gp16" cx="50%" cy="35%" r="80%"><stop offset="0" stop-color="hsl(280,55%,26%)"/><stop offset="1" stop-color="hsl(310,60%,14%)"/></radialGradient></defs><rect width="200" height="200" fill="url(#gp16)"/><circle cx="160" cy="40" r="50" fill="hsl(280,70%,62%)" opacity=".08"/><ellipse cx="100" cy="166" rx="26" ry="6" fill="#000" opacity=".35"/>
     <rect x="78" y="40" width="44" height="22" rx="6" fill="#d9d9d4"/><rect x="82" y="62" width="36" height="14" fill="#bdbdb6"/>
     <rect x="76" y="76" width="48" height="76" rx="8" fill="hsl(300,75%,48%)" opacity=".96"/><rect x="82" y="84" width="14" height="60" rx="6" fill="#fff" opacity=".28"/>
     <rect x="76" y="76" width="48" height="76" rx="8" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="2"/>
-    <rect x="82" y="152" width="36" height="12" fill="#c3a15c"/><path d="M96 164v6h8v-6z" fill="#8a7440"/></svg><span class="badge">Premium</span><span class="tpill Hybrid">Hybrid</span></div>
+    <rect x="82" y="152" width="36" height="12" fill="#c3a15c"/><path d="M96 164v6h8v-6z" fill="#8a7440"/></svg><span class="coming-soon-banner">Coming Soon</span></div>
      <div class="body"><span class="brand">Glasshouse</span><h3>Live Resin Cart · Gelato</h3>
        <div class="potency"><span>THC <b>81.9%</b></span><span>CBD <b>0.1%</b></span></div>
-       <div class="foot"><div class="price"><small></small>$65.00<small> · 1g</small></div><button class="add" data-add="16" aria-label="Add Live Resin Cart · Gelato to bag">+</button></div>
+
      </div></article>
    <article class="prod" data-id="10" data-category="Concentrates" style="animation-delay:360ms" tabindex="0">
      <div class="art"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" style="display:block"><defs><radialGradient id="gp10" cx="50%" cy="35%" r="80%"><stop offset="0" stop-color="hsl(38,55%,26%)"/><stop offset="1" stop-color="hsl(68,60%,14%)"/></radialGradient></defs><rect width="200" height="200" fill="url(#gp10)"/><circle cx="160" cy="40" r="50" fill="hsl(38,70%,62%)" opacity=".08"/><g transform="translate(100 108)"><ellipse cx="0" cy="48" rx="62" ry="9" fill="#000" opacity=".35"/>
@@ -709,65 +711,65 @@ html:not([data-catalog-ready]) #shop:has(#shop-prerolls:target) #count{display:n
     <path d="M-62 -16L-24 -46L52 -34L-6 -6z" fill="#ffd462"/>
     <path d="M-6 -6L52 -34L64 8L30 44z" fill="#c27f08"/>
     <path d="M-62 -16L-6 -6L30 44L-46 36z" fill="#f0b52a"/>
-    <path d="M-30 -30l22 14M10 -26l-6 40M-40 8l30 6" stroke="#fff" stroke-width="2.5" opacity=".5" fill="none" stroke-linecap="round"/></g></svg><span class="badge">Top shelf</span><span class="tpill Sativa">Sativa</span></div>
+    <path d="M-30 -30l22 14M10 -26l-6 40M-40 8l30 6" stroke="#fff" stroke-width="2.5" opacity=".5" fill="none" stroke-linecap="round"/></g></svg><span class="coming-soon-banner">Coming Soon</span></div>
      <div class="body"><span class="brand">Glasshouse</span><h3>Strawberry Cough Shatter</h3>
        <div class="potency"><span>THC <b>87.3%</b></span><span>CBD <b>0.3%</b></span></div>
-       <div class="foot"><div class="price"><small>from </small>$35.00<small> · 1g</small></div><button class="add" data-add="10" aria-label="Add Strawberry Cough Shatter to bag">+</button></div>
+
      </div></article>
    <article class="prod" data-id="18" data-category="Pens" style="animation-delay:360ms" tabindex="0">
      <div class="art"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" style="display:block"><defs><radialGradient id="gp18" cx="50%" cy="35%" r="80%"><stop offset="0" stop-color="hsl(285,55%,26%)"/><stop offset="1" stop-color="hsl(315,60%,14%)"/></radialGradient></defs><rect width="200" height="200" fill="url(#gp18)"/><circle cx="160" cy="40" r="50" fill="hsl(285,70%,62%)" opacity=".08"/><g transform="translate(100 100) rotate(32)"><ellipse cx="0" cy="84" rx="16" ry="4" fill="#000" opacity=".3"/>
     <rect x="-17" y="-76" width="34" height="14" rx="6" fill="#222"/><rect x="-19" y="-64" width="38" height="140" rx="16" fill="hsl(305,75%,48%)"/>
     <rect x="-13" y="-52" width="9" height="108" rx="4.5" fill="#fff" opacity=".28"/>
     <text transform="rotate(90)" x="-4" y="5" font-family="Fraunces,serif" font-weight="800" font-size="14" fill="#fff" opacity=".9" letter-spacing="2">CLOUD</text>
-    <circle cx="0" cy="62" r="4" fill="hsl(285,70%,62%)"/></g></svg><span class="tpill Indica">Indica</span></div>
+    <circle cx="0" cy="62" r="4" fill="hsl(285,70%,62%)"/></g></svg><span class="coming-soon-banner">Coming Soon</span></div>
      <div class="body"><span class="brand">Puff Co.</span><h3>Cloud Pen · Grape Ape</h3>
        <div class="potency"><span>THC <b>89%</b></span></div>
-       <div class="foot"><div class="price"><small>from </small>$48.00<small> · 1g disposable</small></div><button class="add" data-add="18" aria-label="Add Cloud Pen · Grape Ape to bag">+</button></div>
+
      </div></article>
    <article class="prod" data-id="20" data-category="Prerolls" style="animation-delay:360ms" tabindex="0">
      <div class="art"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" style="display:block"><defs><radialGradient id="gp20" cx="50%" cy="35%" r="80%"><stop offset="0" stop-color="hsl(130,55%,26%)"/><stop offset="1" stop-color="hsl(160,60%,14%)"/></radialGradient></defs><rect width="200" height="200" fill="url(#gp20)"/><circle cx="160" cy="40" r="50" fill="hsl(130,70%,62%)" opacity=".08"/><g transform="translate(100 100) rotate(-40)"><ellipse cx="0" cy="68" rx="14" ry="4" fill="#000" opacity=".3"/>
     <path d="M-11 -70h22l9 140h-40z" fill="#ece3cd"/><path d="M-11 -70h22l1 12h-24z" fill="#cdbf9b"/>
     <path d="M-6 -62v120M2 -62v120" stroke="#c9bd9e" stroke-width="1.2"/>
-    <rect x="-10" y="-30" width="20" height="9" fill="hsl(130,70%,62%)" opacity=".85"/><rect x="-9" y="62" width="18" height="12" rx="3" fill="#d5c9a8"/></g></svg><span class="tpill Hybrid">Hybrid</span></div>
+    <rect x="-10" y="-30" width="20" height="9" fill="hsl(130,70%,62%)" opacity=".85"/><rect x="-9" y="62" width="18" height="12" rx="3" fill="#d5c9a8"/></g></svg><span class="coming-soon-banner">Coming Soon</span></div>
      <div class="body"><span class="brand">Highline</span><h3>Hybrid Pre-Roll 5-Pack</h3>
        <div class="potency"><span>THC <b>23.5%</b></span><span>CBD <b>0.1%</b></span></div>
-       <div class="foot"><div class="price"><small></small>$28.00<small> · 5 × 0.5g</small></div><button class="add" data-add="20" aria-label="Add Hybrid Pre-Roll 5-Pack to bag">+</button></div>
+
      </div></article>
    <article class="prod" data-id="14" data-category="Carts" style="animation-delay:360ms" tabindex="0">
      <div class="art"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" style="display:block"><defs><radialGradient id="gp14" cx="50%" cy="35%" r="80%"><stop offset="0" stop-color="hsl(60,55%,26%)"/><stop offset="1" stop-color="hsl(90,60%,14%)"/></radialGradient></defs><rect width="200" height="200" fill="url(#gp14)"/><circle cx="160" cy="40" r="50" fill="hsl(60,70%,62%)" opacity=".08"/><ellipse cx="100" cy="166" rx="26" ry="6" fill="#000" opacity=".35"/>
     <rect x="78" y="40" width="44" height="22" rx="6" fill="#d9d9d4"/><rect x="82" y="62" width="36" height="14" fill="#bdbdb6"/>
     <rect x="76" y="76" width="48" height="76" rx="8" fill="hsl(80,75%,48%)" opacity=".96"/><rect x="82" y="84" width="14" height="60" rx="6" fill="#fff" opacity=".28"/>
     <rect x="76" y="76" width="48" height="76" rx="8" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="2"/>
-    <rect x="82" y="152" width="36" height="12" fill="#c3a15c"/><path d="M96 164v6h8v-6z" fill="#8a7440"/></svg><span class="tpill Sativa">Sativa</span></div>
+    <rect x="82" y="152" width="36" height="12" fill="#c3a15c"/><path d="M96 164v6h8v-6z" fill="#8a7440"/></svg><span class="coming-soon-banner">Coming Soon</span></div>
      <div class="body"><span class="brand">Voltage</span><h3>Pineapple Express Cart</h3>
        <div class="potency"><span>THC <b>86.4%</b></span><span>CBD <b>0.2%</b></span></div>
-       <div class="foot"><div class="price"><small>from </small>$32.00<small> · 0.5g</small></div><button class="add" data-add="14" aria-label="Add Pineapple Express Cart to bag">+</button></div>
+
      </div></article>
    <article class="prod" data-id="9" data-category="Edibles" style="animation-delay:360ms" tabindex="0">
-     <div class="art"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" style="display:block"><defs><radialGradient id="gp9" cx="50%" cy="35%" r="80%"><stop offset="0" stop-color="hsl(340,55%,26%)"/><stop offset="1" stop-color="hsl(10,60%,14%)"/></radialGradient></defs><rect width="200" height="200" fill="url(#gp9)"/><circle cx="160" cy="40" r="50" fill="hsl(340,70%,62%)" opacity=".08"/><g transform="translate(66 78) rotate(-12)"><path d="M-18 -4a14 14 0 0 1 14-16c8 0 12 6 18 6s8-6 14-4c10 4 10 22 0 30-6 6-10 14-24 14s-20-12-22-18c-2-4-2-8 0-12z" fill="hsl(340,70%,62%)"/><path d="M-12 -10c6-8 16-6 22-2" stroke="#fff" stroke-width="3" opacity=".35" fill="none" stroke-linecap="round"/><circle cx="-6" cy="10" r="2" fill="#fff" opacity=".6"/><circle cx="8" cy="12" r="2" fill="#fff" opacity=".6"/><circle cx="0" cy="2" r="2" fill="#fff" opacity=".6"/></g><g transform="translate(128 70) rotate(14)"><path d="M-18 -4a14 14 0 0 1 14-16c8 0 12 6 18 6s8-6 14-4c10 4 10 22 0 30-6 6-10 14-24 14s-20-12-22-18c-2-4-2-8 0-12z" fill="#ffd166"/><path d="M-12 -10c6-8 16-6 22-2" stroke="#fff" stroke-width="3" opacity=".35" fill="none" stroke-linecap="round"/><circle cx="-6" cy="10" r="2" fill="#fff" opacity=".6"/><circle cx="8" cy="12" r="2" fill="#fff" opacity=".6"/><circle cx="0" cy="2" r="2" fill="#fff" opacity=".6"/></g><g transform="translate(100 128) rotate(0)"><path d="M-18 -4a14 14 0 0 1 14-16c8 0 12 6 18 6s8-6 14-4c10 4 10 22 0 30-6 6-10 14-24 14s-20-12-22-18c-2-4-2-8 0-12z" fill="hsl(0,75%,48%)"/><path d="M-12 -10c6-8 16-6 22-2" stroke="#fff" stroke-width="3" opacity=".35" fill="none" stroke-linecap="round"/><circle cx="-6" cy="10" r="2" fill="#fff" opacity=".6"/><circle cx="8" cy="12" r="2" fill="#fff" opacity=".6"/><circle cx="0" cy="2" r="2" fill="#fff" opacity=".6"/></g><g transform="translate(150 132) rotate(-18)"><path d="M-18 -4a14 14 0 0 1 14-16c8 0 12 6 18 6s8-6 14-4c10 4 10 22 0 30-6 6-10 14-24 14s-20-12-22-18c-2-4-2-8 0-12z" fill="#ff6b8b"/><path d="M-12 -10c6-8 16-6 22-2" stroke="#fff" stroke-width="3" opacity=".35" fill="none" stroke-linecap="round"/><circle cx="-6" cy="10" r="2" fill="#fff" opacity=".6"/><circle cx="8" cy="12" r="2" fill="#fff" opacity=".6"/><circle cx="0" cy="2" r="2" fill="#fff" opacity=".6"/></g><g transform="translate(48 132) rotate(16)"><path d="M-18 -4a14 14 0 0 1 14-16c8 0 12 6 18 6s8-6 14-4c10 4 10 22 0 30-6 6-10 14-24 14s-20-12-22-18c-2-4-2-8 0-12z" fill="#7bdff2"/><path d="M-12 -10c6-8 16-6 22-2" stroke="#fff" stroke-width="3" opacity=".35" fill="none" stroke-linecap="round"/><circle cx="-6" cy="10" r="2" fill="#fff" opacity=".6"/><circle cx="8" cy="12" r="2" fill="#fff" opacity=".6"/><circle cx="0" cy="2" r="2" fill="#fff" opacity=".6"/></g></svg><span class="badge">Beginner</span><span class="tpill CBD">CBD</span></div>
+     <div class="art"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" style="display:block"><defs><radialGradient id="gp9" cx="50%" cy="35%" r="80%"><stop offset="0" stop-color="hsl(340,55%,26%)"/><stop offset="1" stop-color="hsl(10,60%,14%)"/></radialGradient></defs><rect width="200" height="200" fill="url(#gp9)"/><circle cx="160" cy="40" r="50" fill="hsl(340,70%,62%)" opacity=".08"/><g transform="translate(66 78) rotate(-12)"><path d="M-18 -4a14 14 0 0 1 14-16c8 0 12 6 18 6s8-6 14-4c10 4 10 22 0 30-6 6-10 14-24 14s-20-12-22-18c-2-4-2-8 0-12z" fill="hsl(340,70%,62%)"/><path d="M-12 -10c6-8 16-6 22-2" stroke="#fff" stroke-width="3" opacity=".35" fill="none" stroke-linecap="round"/><circle cx="-6" cy="10" r="2" fill="#fff" opacity=".6"/><circle cx="8" cy="12" r="2" fill="#fff" opacity=".6"/><circle cx="0" cy="2" r="2" fill="#fff" opacity=".6"/></g><g transform="translate(128 70) rotate(14)"><path d="M-18 -4a14 14 0 0 1 14-16c8 0 12 6 18 6s8-6 14-4c10 4 10 22 0 30-6 6-10 14-24 14s-20-12-22-18c-2-4-2-8 0-12z" fill="#ffd166"/><path d="M-12 -10c6-8 16-6 22-2" stroke="#fff" stroke-width="3" opacity=".35" fill="none" stroke-linecap="round"/><circle cx="-6" cy="10" r="2" fill="#fff" opacity=".6"/><circle cx="8" cy="12" r="2" fill="#fff" opacity=".6"/><circle cx="0" cy="2" r="2" fill="#fff" opacity=".6"/></g><g transform="translate(100 128) rotate(0)"><path d="M-18 -4a14 14 0 0 1 14-16c8 0 12 6 18 6s8-6 14-4c10 4 10 22 0 30-6 6-10 14-24 14s-20-12-22-18c-2-4-2-8 0-12z" fill="hsl(0,75%,48%)"/><path d="M-12 -10c6-8 16-6 22-2" stroke="#fff" stroke-width="3" opacity=".35" fill="none" stroke-linecap="round"/><circle cx="-6" cy="10" r="2" fill="#fff" opacity=".6"/><circle cx="8" cy="12" r="2" fill="#fff" opacity=".6"/><circle cx="0" cy="2" r="2" fill="#fff" opacity=".6"/></g><g transform="translate(150 132) rotate(-18)"><path d="M-18 -4a14 14 0 0 1 14-16c8 0 12 6 18 6s8-6 14-4c10 4 10 22 0 30-6 6-10 14-24 14s-20-12-22-18c-2-4-2-8 0-12z" fill="#ff6b8b"/><path d="M-12 -10c6-8 16-6 22-2" stroke="#fff" stroke-width="3" opacity=".35" fill="none" stroke-linecap="round"/><circle cx="-6" cy="10" r="2" fill="#fff" opacity=".6"/><circle cx="8" cy="12" r="2" fill="#fff" opacity=".6"/><circle cx="0" cy="2" r="2" fill="#fff" opacity=".6"/></g><g transform="translate(48 132) rotate(16)"><path d="M-18 -4a14 14 0 0 1 14-16c8 0 12 6 18 6s8-6 14-4c10 4 10 22 0 30-6 6-10 14-24 14s-20-12-22-18c-2-4-2-8 0-12z" fill="#7bdff2"/><path d="M-12 -10c6-8 16-6 22-2" stroke="#fff" stroke-width="3" opacity=".35" fill="none" stroke-linecap="round"/><circle cx="-6" cy="10" r="2" fill="#fff" opacity=".6"/><circle cx="8" cy="12" r="2" fill="#fff" opacity=".6"/><circle cx="0" cy="2" r="2" fill="#fff" opacity=".6"/></g></svg><span class="coming-soon-banner">Coming Soon</span></div>
      <div class="body"><span class="brand">Pure Leaf</span><h3>Mixed Berry 1:1 Gummies</h3>
        <div class="potency"><span>THC <b>2.5mg</b></span><span>CBD <b>2.5mg</b></span></div>
-       <div class="foot"><div class="price"><small></small>$9.00<small> · 4 pack</small></div><button class="add" data-add="9" aria-label="Add Mixed Berry 1:1 Gummies to bag">+</button></div>
+
      </div></article>
    <article class="prod" data-id="19" data-category="Pens" style="animation-delay:360ms" tabindex="0">
      <div class="art"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" style="display:block"><defs><radialGradient id="gp19" cx="50%" cy="35%" r="80%"><stop offset="0" stop-color="hsl(200,55%,26%)"/><stop offset="1" stop-color="hsl(230,60%,14%)"/></radialGradient></defs><rect width="200" height="200" fill="url(#gp19)"/><circle cx="160" cy="40" r="50" fill="hsl(200,70%,62%)" opacity=".08"/><g transform="translate(100 100) rotate(32)"><ellipse cx="0" cy="84" rx="16" ry="4" fill="#000" opacity=".3"/>
     <rect x="-17" y="-76" width="34" height="14" rx="6" fill="#222"/><rect x="-19" y="-64" width="38" height="140" rx="16" fill="hsl(220,75%,48%)"/>
     <rect x="-13" y="-52" width="9" height="108" rx="4.5" fill="#fff" opacity=".28"/>
     <text transform="rotate(90)" x="-4" y="5" font-family="Fraunces,serif" font-weight="800" font-size="14" fill="#fff" opacity=".9" letter-spacing="2">CLOUD</text>
-    <circle cx="0" cy="62" r="4" fill="hsl(200,70%,62%)"/></g></svg><span class="tpill Hybrid">Hybrid</span></div>
+    <circle cx="0" cy="62" r="4" fill="hsl(200,70%,62%)"/></g></svg><span class="coming-soon-banner">Coming Soon</span></div>
      <div class="body"><span class="brand">Puff Co.</span><h3>Cloud Pen · Blue Razz</h3>
        <div class="potency"><span>THC <b>88.5%</b></span></div>
-       <div class="foot"><div class="price"><small></small>$48.00<small> · 1g disposable</small></div><button class="add" data-add="19" aria-label="Add Cloud Pen · Blue Razz to bag">+</button></div>
+
      </div></article>
    <article class="prod" data-id="15" data-category="Carts" style="animation-delay:360ms" tabindex="0">
      <div class="art"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" style="display:block"><defs><radialGradient id="gp15" cx="50%" cy="35%" r="80%"><stop offset="0" stop-color="hsl(250,55%,26%)"/><stop offset="1" stop-color="hsl(280,60%,14%)"/></radialGradient></defs><rect width="200" height="200" fill="url(#gp15)"/><circle cx="160" cy="40" r="50" fill="hsl(250,70%,62%)" opacity=".08"/><ellipse cx="100" cy="166" rx="26" ry="6" fill="#000" opacity=".35"/>
     <rect x="78" y="40" width="44" height="22" rx="6" fill="#d9d9d4"/><rect x="82" y="62" width="36" height="14" fill="#bdbdb6"/>
     <rect x="76" y="76" width="48" height="76" rx="8" fill="hsl(270,75%,48%)" opacity=".96"/><rect x="82" y="84" width="14" height="60" rx="6" fill="#fff" opacity=".28"/>
     <rect x="76" y="76" width="48" height="76" rx="8" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="2"/>
-    <rect x="82" y="152" width="36" height="12" fill="#c3a15c"/><path d="M96 164v6h8v-6z" fill="#8a7440"/></svg><span class="tpill Indica">Indica</span></div>
+    <rect x="82" y="152" width="36" height="12" fill="#c3a15c"/><path d="M96 164v6h8v-6z" fill="#8a7440"/></svg><span class="coming-soon-banner">Coming Soon</span></div>
      <div class="body"><span class="brand">Voltage</span><h3>Northern Lights Cart</h3>
        <div class="potency"><span>THC <b>85.5%</b></span><span>CBD <b>0.1%</b></span></div>
-       <div class="foot"><div class="price"><small>from </small>$32.00<small> · 0.5g</small></div><button class="add" data-add="15" aria-label="Add Northern Lights Cart to bag">+</button></div>
+
      </div></article>
    <article class="prod" data-id="12" data-category="Concentrates" style="animation-delay:360ms" tabindex="0">
      <div class="art"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" style="display:block"><defs><radialGradient id="gp12" cx="50%" cy="35%" r="80%"><stop offset="0" stop-color="hsl(52,55%,26%)"/><stop offset="1" stop-color="hsl(82,60%,14%)"/></radialGradient></defs><rect width="200" height="200" fill="url(#gp12)"/><circle cx="160" cy="40" r="50" fill="hsl(52,70%,62%)" opacity=".08"/><g transform="translate(100 108)"><ellipse cx="0" cy="48" rx="62" ry="9" fill="#000" opacity=".35"/>
@@ -775,25 +777,25 @@ html:not([data-catalog-ready]) #shop:has(#shop-prerolls:target) #count{display:n
     <path d="M-62 -16L-24 -46L52 -34L-6 -6z" fill="#ffd462"/>
     <path d="M-6 -6L52 -34L64 8L30 44z" fill="#c27f08"/>
     <path d="M-62 -16L-6 -6L30 44L-46 36z" fill="#f0b52a"/>
-    <path d="M-30 -30l22 14M10 -26l-6 40M-40 8l30 6" stroke="#fff" stroke-width="2.5" opacity=".5" fill="none" stroke-linecap="round"/></g></svg><span class="badge">New</span><span class="tpill Hybrid">Hybrid</span></div>
+    <path d="M-30 -30l22 14M10 -26l-6 40M-40 8l30 6" stroke="#fff" stroke-width="2.5" opacity=".5" fill="none" stroke-linecap="round"/></g></svg><span class="coming-soon-banner">Coming Soon</span></div>
      <div class="body"><span class="brand">Glasshouse</span><h3>Live Resin Badder</h3>
        <div class="potency"><span>THC <b>79.2%</b></span><span>CBD <b>0.1%</b></span></div>
-       <div class="foot"><div class="price"><small></small>$45.00<small> · 1g</small></div><button class="add" data-add="12" aria-label="Add Live Resin Badder to bag">+</button></div>
+
      </div></article>
    <article class="prod" data-id="7" data-category="Edibles" style="animation-delay:360ms" tabindex="0">
-     <div class="art"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" style="display:block"><defs><radialGradient id="gp7" cx="50%" cy="35%" r="80%"><stop offset="0" stop-color="hsl(25,55%,26%)"/><stop offset="1" stop-color="hsl(55,60%,14%)"/></radialGradient></defs><rect width="200" height="200" fill="url(#gp7)"/><circle cx="160" cy="40" r="50" fill="hsl(25,70%,62%)" opacity=".08"/><g transform="translate(46 50) rotate(-6 50 50)"><rect x="-6" y="-6" width="118" height="118" rx="10" fill="#1b0f09"/><rect x="0" y="0" width="32" height="32" rx="5" fill="#3b2216"/><rect x="4" y="4" width="24" height="24" rx="3" fill="#4d2e1d"/><rect x="0" y="36" width="32" height="32" rx="5" fill="#3b2216"/><rect x="4" y="40" width="24" height="24" rx="3" fill="#4d2e1d"/><rect x="0" y="72" width="32" height="32" rx="5" fill="#3b2216"/><rect x="4" y="76" width="24" height="24" rx="3" fill="#4d2e1d"/><rect x="36" y="0" width="32" height="32" rx="5" fill="#3b2216"/><rect x="40" y="4" width="24" height="24" rx="3" fill="#4d2e1d"/><rect x="36" y="36" width="32" height="32" rx="5" fill="#3b2216"/><rect x="40" y="40" width="24" height="24" rx="3" fill="#4d2e1d"/><rect x="36" y="72" width="32" height="32" rx="5" fill="#3b2216"/><rect x="40" y="76" width="24" height="24" rx="3" fill="#4d2e1d"/><rect x="72" y="0" width="32" height="32" rx="5" fill="#3b2216"/><rect x="76" y="4" width="24" height="24" rx="3" fill="#4d2e1d"/><rect x="72" y="36" width="32" height="32" rx="5" fill="#3b2216"/><rect x="76" y="40" width="24" height="24" rx="3" fill="#4d2e1d"/><rect x="72" y="72" width="32" height="32" rx="5" fill="#3b2216"/><rect x="76" y="76" width="24" height="24" rx="3" fill="#4d2e1d"/></g></svg><span class="tpill Indica">Indica</span></div>
+     <div class="art"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" style="display:block"><defs><radialGradient id="gp7" cx="50%" cy="35%" r="80%"><stop offset="0" stop-color="hsl(25,55%,26%)"/><stop offset="1" stop-color="hsl(55,60%,14%)"/></radialGradient></defs><rect width="200" height="200" fill="url(#gp7)"/><circle cx="160" cy="40" r="50" fill="hsl(25,70%,62%)" opacity=".08"/><g transform="translate(46 50) rotate(-6 50 50)"><rect x="-6" y="-6" width="118" height="118" rx="10" fill="#1b0f09"/><rect x="0" y="0" width="32" height="32" rx="5" fill="#3b2216"/><rect x="4" y="4" width="24" height="24" rx="3" fill="#4d2e1d"/><rect x="0" y="36" width="32" height="32" rx="5" fill="#3b2216"/><rect x="4" y="40" width="24" height="24" rx="3" fill="#4d2e1d"/><rect x="0" y="72" width="32" height="32" rx="5" fill="#3b2216"/><rect x="4" y="76" width="24" height="24" rx="3" fill="#4d2e1d"/><rect x="36" y="0" width="32" height="32" rx="5" fill="#3b2216"/><rect x="40" y="4" width="24" height="24" rx="3" fill="#4d2e1d"/><rect x="36" y="36" width="32" height="32" rx="5" fill="#3b2216"/><rect x="40" y="40" width="24" height="24" rx="3" fill="#4d2e1d"/><rect x="36" y="72" width="32" height="32" rx="5" fill="#3b2216"/><rect x="40" y="76" width="24" height="24" rx="3" fill="#4d2e1d"/><rect x="72" y="0" width="32" height="32" rx="5" fill="#3b2216"/><rect x="76" y="4" width="24" height="24" rx="3" fill="#4d2e1d"/><rect x="72" y="36" width="32" height="32" rx="5" fill="#3b2216"/><rect x="76" y="40" width="24" height="24" rx="3" fill="#4d2e1d"/><rect x="72" y="72" width="32" height="32" rx="5" fill="#3b2216"/><rect x="76" y="76" width="24" height="24" rx="3" fill="#4d2e1d"/></g></svg><span class="coming-soon-banner">Coming Soon</span></div>
      <div class="body"><span class="brand">Cloud Kitchen</span><h3>Midnight Dark Chocolate</h3>
        <div class="potency"><span>THC <b>5mg</b></span></div>
-       <div class="foot"><div class="price"><small></small>$8.00<small> · 2 squares</small></div><button class="add" data-add="7" aria-label="Add Midnight Dark Chocolate to bag">+</button></div>
+
      </div></article>
    <article class="prod" data-id="21" data-category="Prerolls" style="animation-delay:360ms" tabindex="0">
      <div class="art"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" style="display:block"><defs><radialGradient id="gp21" cx="50%" cy="35%" r="80%"><stop offset="0" stop-color="hsl(320,55%,26%)"/><stop offset="1" stop-color="hsl(350,60%,14%)"/></radialGradient></defs><rect width="200" height="200" fill="url(#gp21)"/><circle cx="160" cy="40" r="50" fill="hsl(320,70%,62%)" opacity=".08"/><g transform="translate(100 100) rotate(-40)"><ellipse cx="0" cy="68" rx="14" ry="4" fill="#000" opacity=".3"/>
     <path d="M-11 -70h22l9 140h-40z" fill="#ece3cd"/><path d="M-11 -70h22l1 12h-24z" fill="#cdbf9b"/>
     <path d="M-6 -62v120M2 -62v120" stroke="#c9bd9e" stroke-width="1.2"/>
-    <rect x="-10" y="-30" width="20" height="9" fill="hsl(320,70%,62%)" opacity=".85"/><rect x="-9" y="62" width="18" height="12" rx="3" fill="#d5c9a8"/></g></svg><span class="badge">Strong</span><span class="tpill Indica">Indica</span></div>
+    <rect x="-10" y="-30" width="20" height="9" fill="hsl(320,70%,62%)" opacity=".85"/><rect x="-9" y="62" width="18" height="12" rx="3" fill="#d5c9a8"/></g></svg><span class="coming-soon-banner">Coming Soon</span></div>
      <div class="body"><span class="brand">Highline</span><h3>Infused Blunt · Zkittlez</h3>
        <div class="potency"><span>THC <b>38.2%</b></span><span>CBD <b>0.1%</b></span></div>
-       <div class="foot"><div class="price"><small></small>$18.00<small> · 1 × 1.5g</small></div><button class="add" data-add="21" aria-label="Add Infused Blunt · Zkittlez to bag">+</button></div>
+
      </div></article>
    <article class="prod" data-id="11" data-category="Concentrates" style="animation-delay:360ms" tabindex="0">
      <div class="art"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" style="display:block"><defs><radialGradient id="gp11" cx="50%" cy="35%" r="80%"><stop offset="0" stop-color="hsl(30,55%,26%)"/><stop offset="1" stop-color="hsl(60,60%,14%)"/></radialGradient></defs><rect width="200" height="200" fill="url(#gp11)"/><circle cx="160" cy="40" r="50" fill="hsl(30,70%,62%)" opacity=".08"/><g transform="translate(100 108)"><ellipse cx="0" cy="48" rx="62" ry="9" fill="#000" opacity=".35"/>
@@ -801,25 +803,25 @@ html:not([data-catalog-ready]) #shop:has(#shop-prerolls:target) #count{display:n
     <path d="M-62 -16L-24 -46L52 -34L-6 -6z" fill="#ffd462"/>
     <path d="M-6 -6L52 -34L64 8L30 44z" fill="#c27f08"/>
     <path d="M-62 -16L-6 -6L30 44L-46 36z" fill="#f0b52a"/>
-    <path d="M-30 -30l22 14M10 -26l-6 40M-40 8l30 6" stroke="#fff" stroke-width="2.5" opacity=".5" fill="none" stroke-linecap="round"/></g></svg><span class="tpill Indica">Indica</span></div>
+    <path d="M-30 -30l22 14M10 -26l-6 40M-40 8l30 6" stroke="#fff" stroke-width="2.5" opacity=".5" fill="none" stroke-linecap="round"/></g></svg><span class="coming-soon-banner">Coming Soon</span></div>
      <div class="body"><span class="brand">Glasshouse</span><h3>Bubba Kush Shatter</h3>
        <div class="potency"><span>THC <b>84.7%</b></span><span>CBD <b>0.2%</b></span></div>
-       <div class="foot"><div class="price"><small>from </small>$32.00<small> · 1g</small></div><button class="add" data-add="11" aria-label="Add Bubba Kush Shatter to bag">+</button></div>
+
      </div></article>
    <article class="prod" data-id="8" data-category="Edibles" style="animation-delay:360ms" tabindex="0">
-     <div class="art"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" style="display:block"><defs><radialGradient id="gp8" cx="50%" cy="35%" r="80%"><stop offset="0" stop-color="hsl(160,55%,26%)"/><stop offset="1" stop-color="hsl(190,60%,14%)"/></radialGradient></defs><rect width="200" height="200" fill="url(#gp8)"/><circle cx="160" cy="40" r="50" fill="hsl(160,70%,62%)" opacity=".08"/><ellipse cx="100" cy="150" rx="56" ry="9" fill="#000" opacity=".35"/><rect x="54" y="74" width="92" height="76" rx="12" fill="#e9eee7"/><rect x="54" y="74" width="92" height="22" rx="10" fill="hsl(160,70%,62%)"/><text x="100" y="124" text-anchor="middle" font-family="Fraunces,serif" font-weight="800" font-size="22" fill="#14231a">MINTS</text><text x="100" y="140" text-anchor="middle" font-family="Inter" font-size="8" fill="#14231a" letter-spacing="2">5MG EACH</text></svg><span class="tpill Sativa">Sativa</span></div>
+     <div class="art"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" style="display:block"><defs><radialGradient id="gp8" cx="50%" cy="35%" r="80%"><stop offset="0" stop-color="hsl(160,55%,26%)"/><stop offset="1" stop-color="hsl(190,60%,14%)"/></radialGradient></defs><rect width="200" height="200" fill="url(#gp8)"/><circle cx="160" cy="40" r="50" fill="hsl(160,70%,62%)" opacity=".08"/><ellipse cx="100" cy="150" rx="56" ry="9" fill="#000" opacity=".35"/><rect x="54" y="74" width="92" height="76" rx="12" fill="#e9eee7"/><rect x="54" y="74" width="92" height="22" rx="10" fill="hsl(160,70%,62%)"/><text x="100" y="124" text-anchor="middle" font-family="Fraunces,serif" font-weight="800" font-size="22" fill="#14231a">MINTS</text><text x="100" y="140" text-anchor="middle" font-family="Inter" font-size="8" fill="#14231a" letter-spacing="2">5MG EACH</text></svg><span class="coming-soon-banner">Coming Soon</span></div>
      <div class="body"><span class="brand">Pure Leaf</span><h3>Wake & Bake Mints</h3>
        <div class="potency"><span>THC <b>2.5mg</b></span></div>
-       <div class="foot"><div class="price"><small></small>$7.00<small> · 4 mints</small></div><button class="add" data-add="8" aria-label="Add Wake & Bake Mints to bag">+</button></div>
+
      </div></article>
    <article class="prod" data-id="22" data-category="Prerolls" style="animation-delay:360ms" tabindex="0">
      <div class="art"><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" style="display:block"><defs><radialGradient id="gp22" cx="50%" cy="35%" r="80%"><stop offset="0" stop-color="hsl(95,55%,26%)"/><stop offset="1" stop-color="hsl(125,60%,14%)"/></radialGradient></defs><rect width="200" height="200" fill="url(#gp22)"/><circle cx="160" cy="40" r="50" fill="hsl(95,70%,62%)" opacity=".08"/><g transform="translate(100 100) rotate(-40)"><ellipse cx="0" cy="68" rx="14" ry="4" fill="#000" opacity=".3"/>
     <path d="M-11 -70h22l9 140h-40z" fill="#ece3cd"/><path d="M-11 -70h22l1 12h-24z" fill="#cdbf9b"/>
     <path d="M-6 -62v120M2 -62v120" stroke="#c9bd9e" stroke-width="1.2"/>
-    <rect x="-10" y="-30" width="20" height="9" fill="hsl(95,70%,62%)" opacity=".85"/><rect x="-9" y="62" width="18" height="12" rx="3" fill="#d5c9a8"/></g></svg><span class="tpill Sativa">Sativa</span></div>
+    <rect x="-10" y="-30" width="20" height="9" fill="hsl(95,70%,62%)" opacity=".85"/><rect x="-9" y="62" width="18" height="12" rx="3" fill="#d5c9a8"/></g></svg><span class="coming-soon-banner">Coming Soon</span></div>
      <div class="body"><span class="brand">Sunrise Gardens</span><h3>Daytime Sativa Pre-Roll</h3>
        <div class="potency"><span>THC <b>21%</b></span><span>CBD <b>0.1%</b></span></div>
-       <div class="foot"><div class="price"><small>from </small>$9.00<small> · 1 × 1g</small></div><button class="add" data-add="22" aria-label="Add Daytime Sativa Pre-Roll to bag">+</button></div>
+
      </div></article></div>
     <div class="empty" id="empty"><h3 style="font-size:28px;margin-bottom:8px">Nothing matches that</h3><p>Try clearing a filter or searching something else.</p><button class="btn btn-ghost" style="margin-top:18px" id="reset">Reset filters</button></div>
   </div>
@@ -1063,6 +1065,9 @@ function art(p,id){
   return `<svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" style="display:block">${bg}${f}</svg>`;
 }
 const catArt=c=>({Flower:P.find(p=>p.id===37),Edibles:{cat:'Edibles',hue:20},Concentrates:{cat:'Concentrates',hue:38},Carts:{cat:'Carts',hue:200},Pens:{cat:'Pens',hue:285},Prerolls:{cat:'Prerolls',hue:95,id:'c'}}[c]);
+const comingSoonCategories=new Set(['Concentrates','Prerolls']);
+const canAddProduct=p=>Boolean(p&&!comingSoonCategories.has(p.cat)&&(p.photo||p.variant));
+const comingSoonBanner='<span class="coming-soon-banner">Coming Soon</span>';
 
 /* ---------- STATE ---------- */
 let state={cat:'All',type:'All',q:'',sort:'pop'};
@@ -1074,8 +1079,10 @@ const sget=k=>{try{return localStorage.getItem(k)}catch(e){return null}};
 const sset=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
 try{cart=JSON.parse(sget('ss_cart')||'[]')}catch(e){cart=[]}
 zip=sget('ss_pc')||'';
-cart=cart.filter(i=>{const p=P.find(x=>x.id===i.pid);return p&&p.opts[i.oi]});
 const save=()=>{sset('ss_cart',JSON.stringify(cart))};
+const savedCartCount=cart.length;
+cart=cart.filter(i=>{const p=P.find(x=>x.id===i.pid);return canAddProduct(p)&&p.opts[i.oi]});
+if(cart.length!==savedCartCount)save();
 
 /* ---------- AGE GATE ---------- */
 if(sget('ss_age')!=='1'){ $('#gate').classList.add('on'); document.body.classList.add('lock'); $('#yes').focus(); }
@@ -1085,7 +1092,10 @@ $('#no').onclick=()=>{ $('#gate').querySelector('.box').innerHTML='<h1>Come back
 /* ---------- HERO / STATIC RENDER ---------- */
 $('#h1').innerHTML=art(P.find(p=>p.id===37),'h');$('#h2').innerHTML=art(P.find(p=>p.id===10),'h');$('#h3').innerHTML=art(P.find(p=>p.id===6),'h');
 $('#mq').innerHTML=[...Array(2)].map(()=>['Flower','Edibles','Shatter','Pens','Carts','Pre-Rolls','Concentrates','Gummies','Same-day delivery'].map(t=>`<span>${t}</span>`).join('<span>✦</span>')).join('<span>✦</span>');
-$('#catgrid').innerHTML=CATS.map(c=>`<a href="#shop-${c.id.toLowerCase()}" class="cat" data-cat="${c.id}"><div class="art">${art(catArt(c.id),'cat')}</div><div class="lbl"><b>${c.label}</b><small>${P.filter(p=>p.cat===c.id).length} products · ${c.sub}</small></div></a>`).join('');
+function renderCategoryCards(){
+  return CATS.map(c=>`<a href="#shop-${c.id.toLowerCase()}" class="cat" data-cat="${c.id}"><div class="art">${art(catArt(c.id),'cat')}${comingSoonCategories.has(c.id)?comingSoonBanner:''}</div><div class="lbl"><b>${c.label}</b><small>${P.filter(p=>p.cat===c.id).length} products · ${c.sub}</small></div></a>`).join('');
+}
+$('#catgrid').innerHTML=renderCategoryCards();
 $('#catchips').innerHTML=['All',...CATS.map(c=>c.id)].map(c=>`<button class="chip ${c==='All'?'on':''}" data-c="${c}">${c==='All'?'All products':CATS.find(x=>x.id===c).label}</button>`).join('');
 $('#typechips').innerHTML=['All','Indica','Sativa','Hybrid','CBD'].map(t=>`<button class="chip t-${t} ${t==='All'?'on':''}" data-t="${t}">${t==='All'?'Any effect':t}</button>`).join('');
 
@@ -1114,13 +1124,16 @@ function renderGrid(){
   });
   $('#count').textContent=`${list.length} product${list.length===1?'':'s'}`;
   $('#empty').style.display=list.length?'none':'block';
-  $('#grid').innerHTML=list.map((p,i)=>`
+  $('#grid').innerHTML=list.map((p,i)=>{
+    const available=canAddProduct(p);
+    return `
    <article class="prod" data-id="${p.id}" data-category="${p.cat}" style="animation-delay:${Math.min(i,12)*30}ms" tabindex="0">
-     <div class="art">${art(p,'p')}${p.badge?`<span class="badge">${p.badge}</span>`:''}<span class="tpill ${p.type}">${p.type}</span></div>
+     <div class="art">${art(p,'p')}${available?`${p.badge?`<span class="badge">${p.badge}</span>`:''}<span class="tpill ${p.type}">${p.type}</span>`:comingSoonBanner}</div>
      <div class="body"><span class="brand">${p.brand}</span><h3>${p.name}</h3>
        <div class="potency"><span>${p.potencyLabel?'<b>'+p.potencyLabel+'</b>':'THC <b>'+(p.unit?p.thc+'mg':p.thc+'%')+'</b>'}</span>${p.cbd?`<span>CBD <b>${p.unit?p.cbd+'mg':p.cbd+'%'}</b></span>`:''}</div>
-       <div class="foot"><div class="price"><small>${p.opts.length>1?'from ':''}</small>${money(p.opts[0][1])}<small> · ${p.opts[0][0].split(' · ')[0]}${p.cat==='Flower'?' · $'+(p.opts[0][1]/28).toFixed(2)+'/g':''}</small></div><button class="add" data-add="${p.id}" aria-label="Add ${p.name} to bag">+</button></div>
-     </div></article>`).join('');
+${available?`       <div class="foot"><div class="price"><small>${p.opts.length>1?'from ':''}</small>${money(p.opts[0][1])}<small> · ${p.opts[0][0].split(' · ')[0]}${p.cat==='Flower'?' · $'+(p.opts[0][1]/28).toFixed(2)+'/g':''}</small></div><button class="add" data-add="${p.id}" aria-label="Add ${p.name} to bag">+</button></div>`:''}
+     </div></article>`;
+  }).join('');
 }
 $('#catchips').onclick=e=>{const b=e.target.closest('[data-c]');if(!b)return;state.cat=b.dataset.c;renderFilters();renderGrid()};
 $('#typechips').onclick=e=>{const b=e.target.closest('[data-t]');if(!b)return;state.type=b.dataset.t;renderFilters();renderGrid()};
@@ -1138,19 +1151,22 @@ $('#grid').addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.classList
 let qvOpt=0;
 function openQV(id){
   const p=P.find(x=>x.id===id);qvOpt=0;
+  const available=canAddProduct(p);
   const draw=()=>{
-    $('#qvbox').innerHTML=`<button class="x" id="qvx" aria-label="Close">✕</button><div class="qv"><div class="art">${art(p,'q')}</div>
+    $('#qvbox').innerHTML=`<button class="x" id="qvx" aria-label="Close">✕</button><div class="qv"><div class="art">${art(p,'q')}${available?'':comingSoonBanner}</div>
     <div class="info"><span class="brand">${p.brand} · ${CATS.find(c=>c.id===p.cat).label}</span><h2>${p.name}</h2>
       <div class="fx"><span style="color:${p.type==='Indica'?'#b9adff':p.type==='Sativa'?'var(--amber)':p.type==='Hybrid'?'#6fe3bc':'#9fe3ff'}">● ${p.type}</span>${p.fx.map(f=>`<span>${f}</span>`).join('')}</div>
       <p class="desc">${p.desc}</p>
       <div class="meter">${p.potencyLabel?`<div><small>Package details</small><b>${p.potencyLabel}</b></div>`:`<div><small>THC</small><b>${p.unit?p.thc+'mg':p.thc+'%'}</b></div><div><small>CBD</small><b>${p.unit?p.cbd+'mg':p.cbd+'%'}</b></div>`}</div>
-      <div class="opts">${p.opts.map((o,i)=>`<button class="opt ${i===qvOpt?'on':''}" data-o="${i}"><b>${o[0].split(' · ')[0]}</b><small>${o[0].includes(' · ')?o[0].split(' · ')[1]+' · ':''}${money(o[1])}</small></button>`).join('')}</div>
-      ${p.potencyLabel?'<p class="qnote">Add this item to try the demo checkout.</p>':`<p class="qnote">📦 Ships in plain packaging &nbsp;·&nbsp; 🔬 Lab tested, COA on request &nbsp;·&nbsp; 🔁 Subscribe in your bag to save 10%</p>`}
-      <button class="btn btn-primary" id="qvadd">Add to bag · ${money(p.opts[qvOpt][1])}</button>
+      ${available?`<div class="opts">${p.opts.map((o,i)=>`<button class="opt ${i===qvOpt?'on':''}" data-o="${i}"><b>${o[0].split(' · ')[0]}</b><small>${o[0].includes(' · ')?o[0].split(' · ')[1]+' · ':''}${money(o[1])}</small></button>`).join('')}</div>
+      <p class="qnote">Add this item to try the demo checkout.</p>
+      <button class="btn btn-primary" id="qvadd">Add to bag · ${money(p.opts[qvOpt][1])}</button>`:''}
     </div></div>`;
     $('#qvx').onclick=closeQV;
-    $$('#qvbox .opt').forEach(b=>b.onclick=()=>{qvOpt=+b.dataset.o;draw()});
-    $('#qvadd').onclick=()=>{addToCart(p.id,qvOpt);closeQV()};
+    if(available){
+      $$('#qvbox .opt').forEach(b=>b.onclick=()=>{qvOpt=+b.dataset.o;draw()});
+      $('#qvadd').onclick=()=>{addToCart(p.id,qvOpt);closeQV()};
+    }
   };
   draw();$('#qvm').classList.add('on');document.body.classList.add('lock');
 }
@@ -1182,6 +1198,8 @@ $('#mbar').onclick=()=>openCart();
 document.addEventListener('click',e=>{const c=e.target.closest('[data-copy]');if(!c)return;try{navigator.clipboard.writeText(c.dataset.copy)}catch(_){}c.textContent='Copied';setTimeout(()=>{c.textContent='Copy'},1500);toast('Copied to clipboard')});
 function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('on'),2200)}
 function addToCart(pid,oi){
+  const product=P.find(p=>p.id===pid);
+  if(!canAddProduct(product)||!product.opts[oi])return;
   const ex=cart.find(i=>i.pid===pid&&i.oi===oi);
   ex?ex.q++:cart.push({pid,oi,q:1});
   save();renderCart();toast('Added to your bag');
@@ -1196,7 +1214,7 @@ function totals(){
   const after=sub-disc-subDisc;
   const fee=sub>0&&sub<FREE?feeOf(fulfil):0;
   const tax=after*TAX;
-  return{sub,disc,subDisc,fee,tax,total:after+fee+tax,gift:sub>=200,recur};
+  return{sub,disc,subDisc,fee,tax,total:after+fee+tax,recur};
 }
 function renderCart(){
   const count=cart.reduce((s,i)=>s+i.q,0);$('#cartN').textContent=count;mbarUpdate(count);
@@ -1213,7 +1231,6 @@ function renderCart(){
    <div class="fopts">${FO.map(o=>`<button class="fopt ${fulfil===o[0]?'on':''}" data-f="${o[0]}"><span class="ic">${o[1]}</span><span class="ft"><b>${o[2]}${o[4]?` <em>${o[4]}</em>`:''}</b><small>${o[3]}</small></span><span class="fp">${o[0]==='pickup'?'Free':money(feeOf(o[0]))}</span></button>`).join('')}</div>
    <div class="ship">${shipLine}<div class="bar"><i style="width:${fulfil==='pickup'?100:pct}%"></i></div></div>
    ${cart.map((i,idx)=>{const p=P.find(x=>x.id===i.pid),o=p.opts[i.oi];return`<div class="line"><div class="art">${art(p,'l')}</div><div><b>${p.name}</b><small>${o[0]}</small><div class="qty"><button data-m="${idx}" aria-label="Less">−</button><span>${i.q}</span><button data-p="${idx}" aria-label="More">+</button></div></div><div class="lp">${money(o[1]*i.q)}</div></div>`}).join('')}
-   ${t.gift?`<div class="line"><div class="art">${art({cat:'Prerolls',hue:95},'gift')}</div><div><b>Free pre-roll 🎁</b><small>Added on orders $200+</small></div><div class="lp" style="color:var(--accent)">FREE</div></div>`:''}
    ${fulfil!=='pickup'?`<div class="sub"><div class="subh"><b>🔁 Repeat this order</b><span class="save">Save 10%</span></div><select class="sel" id="freq" aria-label="Order frequency">${FREQS.map(f=>`<option value="${f[0]}" ${freq===f[0]?'selected':''}>${f[1]}</option>`).join('')}</select><small>${freq==='once'?'Set a schedule and we\'ll ship it automatically. Skip, pause or cancel anytime.':'Next shipments: '+[0,1,2].map(n=>fmtD(addDays(new Date(),1+n*freqOf(freq)[2]))).join(' · ')+'. Skip, pause or cancel anytime.'}</small></div>`:''}
    <div class="promo"><input id="pc" placeholder="Promo code" value="${promo||''}" aria-label="Promo code"><button id="pa">Apply</button></div>`;
   const below=t.sub<MIN;
@@ -1282,7 +1299,6 @@ function openCheckout(){
    </div>
    <div class="sum"><h3 style="font-size:22px;margin-bottom:16px">Order summary</h3>
     ${cart.map(i=>{const p=P.find(x=>x.id===i.pid);return`<div class="li"><span>${i.q}× ${p.name} <small>(${p.opts[i.oi][0].split(' · ')[0]})</small></span><span>${money(p.opts[i.oi][1]*i.q)}</span></div>`}).join('')}
-    ${t.gift?'<div class="li"><span>1× Free pre-roll</span><span style="color:var(--accent)">FREE</span></div>':''}
     <hr style="border:0;border-top:1px solid var(--line);margin:14px 0">
     <div class="li"><span>Subtotal</span><span>${money(t.sub)}</span></div>
     ${t.disc?`<div class="li"><span>Promo</span><span style="color:var(--accent)">−${money(t.disc)}</span></div>`:''}
