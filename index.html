@@ -847,7 +847,7 @@ html:not([data-catalog-ready]) #shop:has(#shop-prerolls:target) #count{display:n
       <div class="step"><h3>Build your order</h3><p>Pick products ($100 minimum), choose mail, local courier or pickup, and optionally set a repeat schedule.</p></div>
       <div class="step"><h3>We verify &amp; pack</h3><p>A budtender confirms your order and packs it in discreet, sealed packaging.</p></div>
       <div class="step"><h3>Tracked and shipped</h3><p>Mail orders ship within 24 hours and arrive in 2–5 business days. Local courier takes about 45 minutes.</p></div>
-      <div class="step"><h3>Sign for it, enjoy</h3><p>An adult signs for the parcel and shows ID. Pay by e-Transfer or card online, or cash or debit for local orders.</p></div>
+      <div class="step"><h3>Sign for it, enjoy</h3><p>An adult signs for the parcel and shows ID. The demo checkout lets you preview payment options.</p></div>
     </div>
     <div class="paybox">
       <div><span class="eyebrow">Checkout preview</span><h3>Try the demo checkout</h3><p>Explore the checkout with sample details. Do not send money or enter real personal information.</p></div>
@@ -923,7 +923,7 @@ html:not([data-catalog-ready]) #shop:has(#shop-prerolls:target) #count{display:n
       <div><h4>Company</h4><ul><li><a href="#how">Delivery areas</a></li><li><a href="#faq">FAQ</a></li><li><a href="#">Careers</a></li><li><a href="#">Contact</a></li></ul></div>
       <div><h4>Hours</h4><ul><li>Mail ships Mon–Fri</li><li>Courier daily 9am – 10pm</li><li>(604) 555-0142</li><li>hello@cloudculture.example</li></ul></div>
     </div>
-    <div class="payrow"><span>Pay with</span><b>Interac e-Transfer</b><b>Cash on delivery</b><b>Debit on delivery</b></div>
+    <div class="payrow"><span>Demo payment options</span><b>Interac e-Transfer</b><b>PayPal</b><b>USDC on Base</b></div>
     <div class="legal">
       <b>BC LCRB Retail Licence No. [PLACEHOLDER]</b> — Must be 19+ to purchase in British Columbia. Delivered only to a verified adult, with ID checked on every order. Mail orders require an adult signature. Keep out of reach of children and pets. Do not drive or operate machinery under the influence. Cannabis can impair judgment and coordination, and may be habit-forming. Consume responsibly. Same-day courier is limited to Surrey and Langley. This is a design prototype; products, prices and licensing shown are placeholders. Prices are in CAD. © 2026 CloudCulture.
     </div>
@@ -1183,9 +1183,9 @@ const FREQS=[['once','One-time order',0],['weekly','Every week',7],['biweekly','
 const freqOf=k=>FREQS.find(f=>f[0]===k);
 const FO=[['mail','📦','Mail delivery','Discreet, tracked, adult signature · Canada-wide','Recommended'],['local','🚚','Local courier','Same day in Surrey & Langley · about 45 min',''],['pickup','🏪','Pickup','Ready in about 15 minutes · Surrey','']];
 const PAY={
-  mail:[['etransfer','💸 Interac e-Transfer','Example payment method'],['card','💳 Credit / debit card','Example payment method']],
-  local:[['cash','💵 Cash','Example payment method'],['debit','💳 Debit','Example payment method']],
-  pickup:[['cash','💵 Cash','Example payment method'],['debit','💳 Debit','Example payment method']]
+  etransfer:{name:'Interac e-Transfer',subtitle:'After placing an order',note:'In a live flow, e-Transfer instructions would appear after the order is placed.'},
+  paypal:{name:'PayPal',subtitle:'Demo only',note:'This previews selecting PayPal. No PayPal connection is active.'},
+  usdc:{name:'Crypto',subtitle:'USDC on Base',note:'This previews a payment in USDC on the Base network. Order totals are shown in CAD.'}
 };
 const feeOf=f=>f==='mail'?MAILFEE:f==='local'?LOCALFEE:0;
 
@@ -1277,7 +1277,6 @@ if(zip&&mailInfo(zip)){checkZip(zip)}
 /* ---------- CHECKOUT ---------- */
 function openCheckout(){
   closeCart();const t=totals();const isMail=fulfil==='mail',isLocal=fulfil==='local',ship=isMail||isLocal;
-  if(!PAY[fulfil].some(x=>x[0]===payMethod))payMethod=PAY[fulfil][0][0];
   const tm=iso(addDays(new Date(),1));
   $('#cobox').innerHTML=`<button class="x" id="cox" aria-label="Close">✕</button>
   <form class="co" id="coform" autocomplete="off" novalidate>
@@ -1291,8 +1290,8 @@ function openCheckout(){
     ${isLocal?`<div class="fld"><label>Delivery window</label><select name="win"><option>ASAP (~45 min)</option><option>Within 1–2 hours</option><option>Tonight 6–8pm</option><option>Tonight 8–10pm</option></select></div>`:''}
     ${t.recur?`<div class="fld"><label>First shipment date · then ${freqOf(freq)[1].toLowerCase()}</label><input name="sd" type="date" min="${tm}" value="${tm}"></div>`:''}
     <label style="font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.08em">Payment</label>
-    <div class="pay" style="margin-top:6px">${PAY[fulfil].map(p=>`<button type="button" data-pm="${p[0]}" class="${payMethod===p[0]?'on':''}"><b>${p[1]}</b><small>${p[2]}</small></button>`).join('')}</div>
-    <div class="note" id="paynote"></div>
+    <div class="pay" style="margin-top:6px">${Object.entries(PAY).map(([key,method])=>`<button type="button" data-pm="${key}" class="${payMethod===key?'on':''}" aria-pressed="${payMethod===key}"><b>${method.name}</b><small>${method.subtitle}</small></button>`).join('')}</div>
+    <div class="note" id="paynote" aria-live="polite"></div>
     <label class="chk"><input type="checkbox" name="id"> I confirm I am of legal age (19+, or 21+ in Québec) and will show valid government photo ID ${isMail?'when signing for my parcel':isLocal?'at delivery':'at pickup'}.</label>
     <div class="zipmsg no" id="coerr"></div>
     <button class="btn btn-primary" style="width:100%;margin-top:6px" type="submit">${t.recur?'Preview subscription':'Preview order'} · ${money(t.total)}</button>
@@ -1310,8 +1309,17 @@ function openCheckout(){
    </div></form>`;
   $('#com').classList.add('on');document.body.classList.add('lock');
   $('#cox').onclick=closeCO;
-  const updNote=()=>{$('#paynote').textContent='Example payment option only. Do not send payment.';};
-  $$('[data-pm]').forEach(b=>b.onclick=()=>{payMethod=b.dataset.pm;$$('[data-pm]').forEach(x=>x.classList.toggle('on',x===b));updNote()});
+  const updNote=()=>{$('#paynote').textContent=PAY[payMethod].note+' Demo only. Do not send payment.';};
+  const paymentButtons=$$('[data-pm]');
+  paymentButtons.forEach(button=>button.onclick=()=>{
+    payMethod=button.dataset.pm;
+    paymentButtons.forEach(option=>{
+      const selected=option===button;
+      option.classList.toggle('on',selected);
+      option.setAttribute('aria-pressed',String(selected));
+    });
+    updNote();
+  });
   updNote();
   $('#coform').onsubmit=e=>{
     e.preventDefault();const f=new FormData(e.target),err=$('#coerr');
@@ -1351,6 +1359,7 @@ function finish(o){
   $('#cobox').innerHTML=`<button class="x" id="cox2" aria-label="Close">✕</button><div class="done">
    <span class="eyebrow">${o.recur?'Subscription preview':'Order preview'}</span><h2>Thanks, ${String(o.name).replace(/[<>&"]/g,'')}.</h2>
    <div class="num">Order ${num} · ${money(o.total)}</div>
+   <p class="qnote">Payment preview · ${PAY[payMethod].name}${payMethod==='usdc'?' · USDC on Base':''} · Awaiting payment (demo)</p>
    <div class="bigeta">${eta}</div><p style="color:var(--mut);margin:8px auto 30px;max-width:420px">${sub}</p>
    <div class="track" id="trk">${labels.map((l,i)=>`<div class="${i===0?'on':''}">${l}</div>`).join('')}</div>
    ${schedule}
