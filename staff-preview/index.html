@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cloud Culture Admin</title>
+  <link rel="stylesheet" href="./dashboard.css">
+  <script type="module" src="./admin.mjs"></script>
+<meta name="cloud-culture-hosted" content="demo">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://ywzlvmhohdjyaiqwzpou.supabase.co; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'self'"></head>
+<body>
+  <header><a href="./demo.html" class="brand">Cloud Culture</a><span class="badge">Hosted staff demo</span></header>
+  <main>
+    <h1>Store admin</h1>
+    <p class="muted">Review sample orders, subscriptions and customer messages.</p>
+    <form id="login" class="panel">
+      <label>Staff email<input id="staff-email" type="email" autocomplete="username" required></label><label for="key">Password</label>
+      <p class="muted">Sign in with your Cloud Culture staff account.</p>
+      <div class="controls"><input id="key" type="password" required autocomplete="current-password"><button>Unlock dashboard</button></div>
+    </form>
+    <p id="status" role="status" aria-live="polite"></p>
+    <div id="dashboard" hidden>
+      <p><a href="./demo.html">Open staff checkout demo</a> · <a href="./contact.html">Open demo support form</a></p><nav class="controls" aria-label="Dashboard sections">
+        <button type="button" data-view="orders" aria-pressed="true">Orders</button>
+        <button type="button" data-view="subscriptions" aria-pressed="false">Subscriptions</button>
+        <button type="button" data-view="messages" aria-pressed="false">Messages</button>
+        <button type="button" id="refresh" class="secondary">Refresh</button>
+        <button type="button" id="lock" class="secondary">Lock dashboard</button>
+      </nav>
+      <section id="orders" class="view" aria-labelledby="orderTitle">
+        <div class="section-head"><h2 id="orderTitle">Orders</h2><input id="search" type="search" aria-label="Find orders" placeholder="Search order, name or email"></div>
+        <div id="order-list" class="list"></div>
+      </section>
+      <section id="subscriptions" class="view" aria-labelledby="subscriptionTitle" hidden>
+        <div class="section-head"><h2 id="subscriptionTitle">Subscriptions</h2><button id="run-due" class="secondary" type="button">Run due schedules</button></div>
+        <div id="subscription-list" class="list"></div>
+      </section>
+      <section id="messages" class="view" aria-labelledby="messageTitle" hidden>
+        <div class="section-head"><h2 id="messageTitle">Messages</h2></div>
+        <div id="message-list" class="list"></div>
+      </section>
+      <form id="backup" class="panel fields"><h2>Encrypted backup</h2><label>Backup passphrase<input id="backup-passphrase" type="password" required minlength="16" autocomplete="off"></label><button>Download backup</button></form>
+    </div>
+  </main>
+</body>
+</html>

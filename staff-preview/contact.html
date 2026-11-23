@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cloud Culture Demo Support</title>
+  <link rel="stylesheet" href="./dashboard.css">
+  <script type="module" src="./contact.mjs"></script>
+<meta name="cloud-culture-hosted" content="demo">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://ywzlvmhohdjyaiqwzpou.supabase.co; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'self'"></head>
+<body>
+  <header><a href="./demo.html" class="brand">Cloud Culture</a><span class="badge">Hosted staff demo</span></header>
+  <main class="narrow">
+    <h1>Contact support</h1>
+    <p class="muted">Use sample details and an example.com email. This message goes to the staff demo dashboard.</p>
+    <form id="message" class="panel fields">
+      <label>Name<input name="name" required maxlength="140" autocomplete="off"></label>
+      <label>Email<input name="email" type="email" required maxlength="254" autocomplete="off"></label>
+      <label>Sample order reference (optional)<input name="order" maxlength="30" autocomplete="off"></label>
+      <label>Message<textarea name="message" required rows="6" maxlength="3000"></textarea></label>
+      <button>Save demo message</button>
+    </form>
+    <p id="status" role="status" aria-live="polite"></p>
+  </main>
+</body>
+</html>
