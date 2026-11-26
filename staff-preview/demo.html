@@ -1303,8 +1303,9 @@ function openCheckout(){
   <form class="co" id="coform" autocomplete="off" novalidate>
    <div><h2>${isMail?'Mailing details':isLocal?'Delivery details':'Pickup details'}</h2>
      <div class="note">Demo checkout. Use sample details and an example.com email. Nothing will be charged or shipped.</div>
+    ${hostedDemo?'<div class="fld"><button class="btn btn-ghost" type="button" id="fill-sample">Use sample details</button></div>':''}
     <div class="two"><div class="fld"><label>First name</label><input name="fn" autocomplete="off"></div><div class="fld"><label>Last name</label><input name="ln" autocomplete="off"></div></div>
-    <div class="two"><div class="fld"><label>Email</label><input name="em" type="email" autocomplete="off" placeholder="you@example.com"></div><div class="fld"><label>Phone</label><input name="ph" type="tel" placeholder="(604) 555-0123" autocomplete="off"></div></div>
+    <div class="two"><div class="fld"><label for="checkout-email">${hostedDemo?'Sample email':'Email'}</label><input id="checkout-email" name="em" type="email" autocomplete="off" placeholder="you@example.com"></div><div class="fld"><label>Phone</label><input name="ph" type="tel" placeholder="(604) 555-0123" autocomplete="off"></div></div>
     <div class="fld"><label>Date of birth</label><input name="dob" type="date"></div>
     ${ship?`<div class="fld"><label>Street address</label><input name="ad" autocomplete="off" placeholder="123 King George Blvd, Unit 4"></div>
     <div class="two"><div class="fld"><label>City</label><input name="city" autocomplete="off" placeholder="${isLocal?'Surrey':'City'}"></div><div class="fld"><label>Postal code</label><input name="zp" maxlength="7" autocapitalize="characters" autocomplete="off" placeholder="V3T 4M1" value="${zip}"></div></div>`:`<div class="fld"><label>Pickup location</label><select name="loc"><option>CloudCulture · Surrey (address placeholder)</option></select></div>`}
@@ -1316,7 +1317,7 @@ function openCheckout(){
     <div class="note" id="paynote" aria-live="polite"></div>
     <p class="qnote">Checkout questions? Email <a class="email-link" href="mailto:orders@cloudculture.ca">orders@cloudculture.ca</a>.</p>
     <label class="chk"><input type="checkbox" name="id"> I confirm I am of legal age (19+, or 21+ in Québec) and will show valid government photo ID ${isMail?'when signing for my parcel':isLocal?'at delivery':'at pickup'}.</label>
-    <div class="zipmsg no" id="coerr"></div>
+    <div class="zipmsg no" id="coerr" role="alert"></div>
     <button class="btn btn-primary" style="width:100%;margin-top:6px" type="submit">${t.recur?'Preview subscription':'Preview order'} · ${money(t.total)}</button>
    </div>
    <div class="sum"><h3 style="font-size:22px;margin-bottom:16px">Order summary</h3>
@@ -1344,11 +1345,25 @@ function openCheckout(){
     updNote();
   });
   updNote();
+  if(hostedDemo){
+    $('#fill-sample').onclick=()=>{
+      const fields=$('#coform').elements;
+      const sample={fn:'Sample',ln:'Customer',em:'sample@example.com',ph:'604-555-0100',dob:'1990-01-01'};
+      if(ship)Object.assign(sample,{ad:'123 Example Street',city:'Surrey',zp:'V3T 4M1'});
+      if(isLocal)sample.driverNotes='';
+      for(const [key,value] of Object.entries(sample))fields.namedItem(key).value=value;
+      $('#coerr').textContent='';
+    };
+  }
   $('#coform').onsubmit=async e=>{
     e.preventDefault();const f=new FormData(e.target),err=$('#coerr');
     const need=ship?['fn','ln','em','ph','dob','ad','city','zp']:['fn','ln','em','ph','dob'];
     for(const k of need){if(!String(f.get(k)||'').trim()){err.textContent='Please fill in all required fields.';return}}
     if(!/^\S+@\S+\.\S+$/.test(String(f.get('em')).trim())){err.textContent='Please enter a valid email address.';return}
+    if(hostedDemo&&!/^[^\s@]+@example\.com$/.test(String(f.get('em')).trim())){
+      err.textContent='Use an example.com email for checkout, or tap Use sample details above. Your account sign-in email stays the same.';
+      return;
+    }
     let info=null,minAge=19;
     if(ship){
       const zp=String(f.get('zp')).trim();
