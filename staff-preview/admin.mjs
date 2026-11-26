@@ -87,6 +87,7 @@ function orderCard(order) {
       ['Customer', order.contact.name], ['Email', order.contact.email], ['Phone', order.contact.phone],
       ['Delivery', fulfillmentLabels[order.fulfillment]],
       ['Delivery address', addr ? `${addr.street}, ${addr.city}, ${addr.postal}, ${addr.country}` : 'Pickup'],
+      ...(order.fulfillment === 'local' && addr?.instructions ? [['Delivery instructions', addr.instructions]] : []),
       ['Payment method', paymentLabels[order.payment_method]],
       ['Scheduled shipment', order.scheduled_date ?? 'One-time order'], ['Subscription', order.subscription_id ?? '—']
     ]));

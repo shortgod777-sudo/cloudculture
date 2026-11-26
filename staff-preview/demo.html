@@ -266,8 +266,9 @@ footer a:hover{color:var(--accent)}
 .co h2{font-size:32px;margin-bottom:20px}
 .fld{margin-bottom:14px}
 .fld label{display:block;font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
-.fld input,.fld select{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;outline:0;font-size:15px}
-.fld input:focus,.fld select:focus{border-color:var(--accent)}
+.fld input,.fld select,.fld textarea{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;outline:0;font-size:15px}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--accent)}
+.fld textarea{font:inherit;color:inherit;resize:vertical}
 .fld.err input{border-color:var(--red)}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .pay{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
@@ -1307,7 +1308,8 @@ function openCheckout(){
     <div class="fld"><label>Date of birth</label><input name="dob" type="date"></div>
     ${ship?`<div class="fld"><label>Street address</label><input name="ad" autocomplete="off" placeholder="123 King George Blvd, Unit 4"></div>
     <div class="two"><div class="fld"><label>City</label><input name="city" autocomplete="off" placeholder="${isLocal?'Surrey':'City'}"></div><div class="fld"><label>Postal code</label><input name="zp" maxlength="7" autocapitalize="characters" autocomplete="off" placeholder="V3T 4M1" value="${zip}"></div></div>`:`<div class="fld"><label>Pickup location</label><select name="loc"><option>CloudCulture · Surrey (address placeholder)</option></select></div>`}
-    ${isLocal?`<div class="fld"><label>Delivery window</label><select name="win"><option>ASAP (~45 min)</option><option>Within 1–2 hours</option><option>Tonight 6–8pm</option><option>Tonight 8–10pm</option></select></div>`:''}
+    ${isLocal?`<div class="fld"><label for="driver-notes">Delivery instructions (optional)</label><textarea id="driver-notes" name="driverNotes" rows="2" maxlength="250" placeholder="Rear house, use the side door"></textarea></div>
+    <div class="fld"><label>Delivery window</label><select name="win"><option>ASAP (~45 min)</option><option>Within 1–2 hours</option><option>Tonight 6–8pm</option><option>Tonight 8–10pm</option></select></div>`:''}
     ${t.recur?`<div class="fld"><label>First shipment date · then ${freqOf(freq)[1].toLowerCase()}</label><input name="sd" type="date" min="${tm}" value="${tm}"></div>`:''}
     <label style="font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.08em">Payment</label>
     <div class="pay" style="margin-top:6px">${Object.entries(PAY).map(([key,method])=>`<button type="button" data-pm="${key}" class="${payMethod===key?'on':''}" aria-pressed="${payMethod===key}"><b>${method.name}</b><small>${method.subtitle}</small></button>`).join('')}</div>
@@ -1368,7 +1370,7 @@ function openCheckout(){
       fulfillment:fulfil,frequency:t.recur?freq:'once',payment:payMethod,promo,
       firstDate:t.recur?order.sd:null,ageConfirmed:true,
       contact:{name:`${f.get('fn')} ${f.get('ln')}`,email:f.get('em'),phone:f.get('ph')},
-      address:ship?{street:f.get('ad'),city:f.get('city'),postal:f.get('zp')}:null
+      address:ship?{street:f.get('ad'),city:f.get('city'),postal:f.get('zp'),...(isLocal&&{instructions:f.get('driverNotes').trim()})}:null
     });
     if(pendingCheckout?.body!==body)pendingCheckout={body,key:crypto.randomUUID()};
     const submit=e.target.querySelector('[type="submit"]');
