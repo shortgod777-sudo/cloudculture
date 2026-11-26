@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My account | Cloud Culture</title>
+  <link rel="stylesheet" href="./dashboard.css">
+  <script type="module" src="./account.mjs"></script>
+<meta name="cloud-culture-hosted" content="demo">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://ywzlvmhohdjyaiqwzpou.supabase.co; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'self'"></head>
+<body>
+  <header><a href="./demo.html">Cloud Culture</a><span>Customer demo</span></header>
+  <main>
+    <h1>My account</h1>
+    <p class="muted">Sample orders and subscriptions only. Use sample contact and delivery details at checkout.</p>
+    <p id="notice" role="status" aria-live="polite"></p>
+    <section id="access" class="list" aria-label="Account access">
+      <form id="sign-in" class="panel fields">
+        <h2>Sign in</h2>
+        <label>Email<input name="email" type="email" autocomplete="username" required></label>
+        <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+        <button>Sign in</button>
+      </form>
+      <form id="sign-up" class="panel fields">
+        <h2>Create a demo account</h2>
+        <p class="muted">Email confirmation is limited to approved testers.</p>
+        <label>Email<input name="email" type="email" autocomplete="username" required></label>
+        <label>Password<input name="password" type="password" autocomplete="new-password" minlength="12" required></label>
+        <button>Create account</button>
+      </form>
+    </section>
+    <div id="account" hidden>
+      <nav class="controls" aria-label="Account actions"><a href="./demo.html">Open demo checkout</a><button type="button" class="secondary" id="sign-out">Sign out</button></nav>
+      <section aria-labelledby="subscriptions-heading">
+        <h2 id="subscriptions-heading">Subscriptions</h2>
+        <div id="subscriptions" class="list"></div>
+      </section>
+      <section aria-labelledby="orders-heading">
+        <h2 id="orders-heading">Order history</h2>
+        <div id="orders" class="list"></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

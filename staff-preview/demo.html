@@ -447,7 +447,7 @@ html:not([data-catalog-ready]) #shop:has(#shop-prerolls:target) #count{display:n
   </div>
 </div>
 
-<div class="protobar">Staff testing only · Use sample details · <a href="./">Staff dashboard</a></div>
+<div class="protobar">Demo only · Use sample details · <a href="./account.html">My account</a> · <a href="./">Staff dashboard</a></div>
 <div class="topbar">📦 Discreet mail delivery · $100 minimum · Free shipping over $150 · New? Code <b>WELCOME20</b> = 20% off</div>
 
 <header class="nav">
@@ -1380,8 +1380,9 @@ function openCheckout(){
     try{
       let receipt;
       if(hostedDemo){
-        const {rpc}=await import('./client.mjs');
-        receipt=await rpc('checkout',{...JSON.parse(body),key:pendingCheckout.key});
+        const {rpc,customerRpc,hasCustomerSession}=await import('./client.mjs');
+        const submitOrder=hasCustomerSession()?customerRpc:rpc;
+        receipt=await submitOrder('checkout',{...JSON.parse(body),key:pendingCheckout.key});
       }else{
         const response=await fetch('/api/checkout',{
           method:'POST',
