@@ -323,6 +323,7 @@ footer a:hover{color:var(--accent)}
 .fopts{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
 .fopt{display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:center;text-align:left;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:var(--panel);transition:.15s}
 .fopt:hover{border-color:#3a5042}
+.fopt:disabled{cursor:default;color:var(--mut);border-color:var(--line)}
 .fopt.on{border-color:var(--accent);background:rgba(200,244,53,.08)}
 .fopt .ic{font-size:20px}
 .fopt .ft b{font-size:14px;display:block}
@@ -858,7 +859,7 @@ html:not([data-catalog-ready]) #shop:has(#shop-prerolls:target) #count{display:n
   <div class="wrap">
     <div class="sechead"><div><span class="eyebrow">Delivery</span><h2>Mailed to you, or couriered today</h2></div><p>Mail orders ship Monday to Friday. Everything is packed in plain, odour-proof parcels with no branding.</p></div>
     <div class="steps">
-      <div class="step"><h3>Build your order</h3><p>Pick products ($100 minimum), choose mail, local courier or pickup, and optionally set a repeat schedule.</p></div>
+      <div class="step"><h3>Build your order</h3><p>Pick products ($100 minimum), choose mail or local courier, and optionally set a repeat schedule. Pickup is coming soon.</p></div>
       <div class="step"><h3>We verify &amp; pack</h3><p>A budtender confirms your order and packs it in discreet, sealed packaging.</p></div>
       <div class="step"><h3>Tracked and shipped</h3><p>Mail orders ship within 24 hours and arrive in 2–5 business days. Local courier takes about 45 minutes.</p></div>
       <div class="step"><h3>Sign for it, enjoy</h3><p>An adult signs for the parcel and shows ID. The demo checkout lets you preview payment options.</p></div>
@@ -913,7 +914,7 @@ html:not([data-catalog-ready]) #shop:has(#shop-prerolls:target) #count{display:n
     <div class="sechead" style="justify-content:center;text-align:center"><div><span class="eyebrow">FAQ</span><h2>Good questions</h2></div></div>
     <div class="faq">
       <details><summary>How does mail delivery work?</summary><p>Orders ship Monday to Friday within 24 hours in a plain, odour-proof parcel with no branding. You get a tracking number, and delivery takes 2–5 business days in most of Canada. An adult must sign and show ID on delivery.</p></details>
-      <details><summary>What's the minimum order and shipping cost?</summary><p>The minimum is $100 per order. Mail shipping is $10 and local courier is $5, both free on orders over $150. Pickup is always free.</p></details>
+      <details><summary>What's the minimum order and shipping cost?</summary><p>The minimum is $100 per order. Mail shipping is $10 and local courier is $5, both free on orders over $150. Pickup is coming soon.</p></details>
       <details><summary>How do subscriptions work?</summary><p>Choose weekly, every 2 weeks, monthly or every 2 months in your bag. You save 10% on every shipment, and we email a reminder before each parcel ships. Skip, pause or cancel anytime. The $100 minimum applies to each shipment.</p></details>
       <details><summary>How do I pay?</summary><p>The checkout is a demo. No payment instructions are sent and no payment is accepted.</p></details>
       <details><summary>How can I contact Cloud Culture?</summary><p>For general questions, email <a class="email-link" href="mailto:support@cloudculture.ca">support@cloudculture.ca</a>. For checkout or order questions, email <a class="email-link" href="mailto:orders@cloudculture.ca">orders@cloudculture.ca</a>.</p></details>
@@ -1196,7 +1197,7 @@ const MAILDAYS={V:[2,3],T:[3,5],S:[3,5],R:[3,5],K:[4,6],L:[4,6],M:[4,6],N:[4,6],
 const mailInfo=pc=>{const n=normPC(pc);if(!n||!PROV[n[0]])return null;return{prov:PROV[n[0]],days:MAILDAYS[n[0]],minAge:'GHJ'.includes(n[0])?21:19}};
 const FREQS=[['once','One-time order',0],['weekly','Every week',7],['biweekly','Every 2 weeks',14],['monthly','Every month',30],['bimonthly','Every 2 months',60]];
 const freqOf=k=>FREQS.find(f=>f[0]===k);
-const FO=[['mail','📦','Mail delivery','Discreet, tracked, adult signature · Canada-wide','Recommended'],['local','🚚','Local courier','Same day in Surrey & Langley · about 45 min',''],['pickup','🏪','Pickup','Ready in about 15 minutes · Surrey','']];
+const FO=[['mail','📦','Mail delivery','Discreet, tracked, adult signature · Canada-wide','Recommended'],['local','🚚','Local courier','Same day in Surrey & Langley · about 45 min',''],['pickup','🏪','Pickup','','Coming soon']];
 const PAY={
   etransfer:{name:'Interac e-Transfer',subtitle:'After placing an order',note:'In a live flow, e-Transfer instructions would appear after the order is placed.'},
   paypal:{name:'PayPal',subtitle:'Demo only',note:'This previews selecting PayPal. No PayPal connection is active.'},
@@ -1241,10 +1242,13 @@ function renderCart(){
     return;
   }
   const pct=Math.min(100,t.sub/FREE*100);
-  const shipLine=fulfil==='pickup'?'Pickup is always free · ready in about 15 minutes.':t.sub>=FREE?`🎉 You've unlocked <b style="color:var(--accent)">free ${fulfil==='mail'?'shipping':'delivery'}</b>`:`Add <b style="color:var(--text)">${money(FREE-t.sub)}</b> more for free ${fulfil==='mail'?'shipping':'delivery'}`;
+  const shipLine=t.sub>=FREE?`🎉 You've unlocked <b style="color:var(--accent)">free ${fulfil==='mail'?'shipping':'delivery'}</b>`:`Add <b style="color:var(--text)">${money(FREE-t.sub)}</b> more for free ${fulfil==='mail'?'shipping':'delivery'}`;
   $('#dbody').innerHTML=`
-   <div class="fopts">${FO.map(o=>`<button class="fopt ${fulfil===o[0]?'on':''}" data-f="${o[0]}"><span class="ic">${o[1]}</span><span class="ft"><b>${o[2]}${o[4]?` <em>${o[4]}</em>`:''}</b><small>${o[3]}</small></span><span class="fp">${o[0]==='pickup'?'Free':money(feeOf(o[0]))}</span></button>`).join('')}</div>
-   <div class="ship">${shipLine}<div class="bar"><i style="width:${fulfil==='pickup'?100:pct}%"></i></div></div>
+   <div class="fopts">${FO.map(([id,icon,name,description,badge])=>{
+     const comingSoon=id==='pickup';
+     return `<button class="fopt ${fulfil===id?'on':''}" data-f="${id}" ${comingSoon?'disabled':''}><span class="ic">${icon}</span><span class="ft"><b>${name}${badge?` <em>${badge}</em>`:''}</b>${description?`<small>${description}</small>`:''}</span>${comingSoon?'':`<span class="fp">${money(feeOf(id))}</span>`}</button>`;
+   }).join('')}</div>
+   <div class="ship">${shipLine}<div class="bar"><i style="width:${pct}%"></i></div></div>
    ${cart.map((i,idx)=>{const p=P.find(x=>x.id===i.pid),o=p.opts[i.oi];return`<div class="line"><div class="art">${art(p,'l')}</div><div><b>${p.name}</b><small>${o[0]}</small><div class="qty"><button data-m="${idx}" aria-label="Less">−</button><span>${i.q}</span><button data-p="${idx}" aria-label="More">+</button></div></div><div class="lp">${money(o[1]*i.q)}</div></div>`}).join('')}
    ${fulfil!=='pickup'?`<div class="sub"><div class="subh"><b>🔁 Repeat this order</b><span class="save">Save 10%</span></div><select class="sel" id="freq" aria-label="Order frequency">${FREQS.map(f=>`<option value="${f[0]}" ${freq===f[0]?'selected':''}>${f[1]}</option>`).join('')}</select><small>${freq==='once'?'Set a schedule and we\'ll ship it automatically. Skip, pause or cancel anytime.':'Next shipments: '+[0,1,2].map(n=>fmtD(addDays(new Date(),1+n*freqOf(freq)[2]))).join(' · ')+'. Skip, pause or cancel anytime.'}</small></div>`:''}
    <div class="promo"><input id="pc" placeholder="Promo code" value="${promo||''}" aria-label="Promo code"><button id="pa">Apply</button></div>`;
@@ -1258,7 +1262,7 @@ function renderCart(){
    <div class="row tot"><span>Total</span><span>${money(t.total)}</span></div>
    ${below?`<div class="min">${money(MIN-t.sub)} more to reach the $${MIN} minimum order</div>`:''}
    <button class="btn btn-primary" style="width:100%" id="chk" ${below?'disabled':''}>${t.recur?'Subscribe &amp; checkout':'Checkout'} · ${money(t.total)}</button>`;
-  $$('.fopt').forEach(b=>b.onclick=()=>{fulfil=b.dataset.f;renderCart()});
+  $$('.fopt:not(:disabled)').forEach(b=>b.onclick=()=>{fulfil=b.dataset.f;renderCart()});
   const fq=$('#freq');if(fq)fq.onchange=()=>{freq=fq.value;renderCart()};
   $$('[data-m]').forEach(b=>b.onclick=()=>{const i=cart[+b.dataset.m];i.q--;if(i.q<1)cart.splice(+b.dataset.m,1);save();renderCart()});
   $$('[data-p]').forEach(b=>b.onclick=()=>{cart[+b.dataset.p].q++;save();renderCart()});
