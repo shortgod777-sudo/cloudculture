@@ -1,11 +1,12 @@
 import { customerRpc, customerSignIn, customerSignOut, customerSignUp, hasCustomerSession } from './client.mjs';
+import { carriers, trackingUrl } from './tracking.mjs';
 
 const $ = id => document.getElementById(id);
 const notice = $('notice');
 const cad = new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD' });
 const day = new Intl.DateTimeFormat('en-CA', { dateStyle: 'medium', timeZone: 'America/Vancouver' });
 const frequencies = { weekly: 'Weekly', biweekly: 'Every two weeks', monthly: 'Monthly', bimonthly: 'Every two months' };
-const orderStates = { open: 'Received', packing: 'Packing', fulfilled: 'Fulfilled', cancelled: 'Cancelled' };
+const orderStates = { open: 'Received', packing: 'Packing', shipped: 'Shipped', fulfilled: 'Fulfilled', cancelled: 'Cancelled' };
 const deliveryMethods = { mail: 'Mail delivery', local: 'Local courier', pickup: 'Pickup' };
 const actions = { pause: 'Pause', resume: 'Resume', skip: 'Skip next', cancel: 'Cancel subscription' };
 
@@ -24,6 +25,16 @@ function orderCard(order) {
   const items = text('ul', '', 'item-list');
   for (const item of order.bill.lines) items.append(text('li', `${item.quantity} × ${item.name} · ${item.option}`));
   card.append(items);
+  const url = trackingUrl(order.tracking);
+  if (url) {
+    const tracking = text('p', `${carriers[order.tracking.carrier]} · ${order.tracking.number} `, 'muted');
+    const link = text('a', 'Track package');
+    link.href = url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    tracking.append(link);
+    card.append(tracking);
+  }
   return card;
 }
 

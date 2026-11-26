@@ -4,6 +4,7 @@ const login = $('#login');
 const hosted = document.querySelector('meta[name="cloud-culture-hosted"]')
   ? await import('./client.mjs')
   : null;
+const carrierLabels = hosted ? (await import('./tracking.mjs')).carriers : null;
 let key = '';
 let data = { orders: [], subscriptions: [], messages: [] };
 const cad = new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD' });
@@ -31,11 +32,11 @@ function facts(entries) {
   return list;
 }
 
-function selection(name, values, current) {
+function selection(name, values, current, labels = {}) {
   const wrap = element('label', name, 'inline-label');
   const select = element('select');
   for (const value of values) {
-    const option = element('option', label(value));
+    const option = element('option', labels[value] ?? label(value));
     option.value = value;
     select.append(option);
   }
@@ -101,10 +102,29 @@ function orderCard(order) {
     ['Demo tax', money(order.bill.tax)], ['Total', money(order.bill.total)]
   ]));
   const payment = selection('Payment', ['awaiting','paid','refunded'], order.payment_status);
-  const fulfillment = selection('Order status', ['open','packing','fulfilled','cancelled'], order.status);
+  const isHostedMail = hosted && order.fulfillment === 'mail';
+  const orderStatuses = isHostedMail ? ['open','packing','shipped','fulfilled','cancelled'] : ['open','packing','fulfilled','cancelled'];
+  const fulfillment = selection('Order status', orderStatuses, order.status);
   const controls = element('div', undefined, 'controls');
-  controls.append(payment.wrap, fulfillment.wrap, actionButton('Save order', async () => {
-    await request('orders/' + id, 'PATCH', { paymentStatus: payment.select.value, status: fulfillment.select.value });
+  controls.append(payment.wrap, fulfillment.wrap);
+  const carrier = isHostedMail ? selection('Carrier', ['', ...Object.keys(carrierLabels)], order.tracking?.carrier ?? '', { ...carrierLabels, '': 'Select carrier' }) : null;
+  const trackingNumber = element('input');
+  if (carrier) {
+    const trackingLabel = element('label', 'Tracking number', 'inline-label');
+    trackingNumber.type = 'text';
+    trackingNumber.maxLength = 50;
+    trackingNumber.autocomplete = 'off';
+    trackingNumber.value = order.tracking?.number ?? '';
+    trackingLabel.append(trackingNumber);
+    controls.append(carrier.wrap, trackingLabel);
+  }
+  controls.append(actionButton('Save order', async () => {
+    const update = { paymentStatus: payment.select.value, status: fulfillment.select.value };
+    if (carrier) {
+      const number = trackingNumber.value.trim();
+      update.tracking = number || carrier.select.value ? { carrier: carrier.select.value, number } : null;
+    }
+    await request('orders/' + id, 'PATCH', update);
   }));
   card.append(details, controls);
   return card;
