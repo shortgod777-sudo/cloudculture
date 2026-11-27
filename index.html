@@ -1223,8 +1223,7 @@ function addToCart(pid,oi){
 }
 function totals(){
   const sub=cart.reduce((s,i)=>s+P.find(p=>p.id===i.pid).opts[i.oi][1]*i.q,0);
-  let disc=0;
-  if(promo==='WELCOME20')disc=sub*.2;
+  const disc=promo?sub*PROMOS[promo].v:0;
   const recur=freq!=='once'&&fulfil!=='pickup';
   const subDisc=recur?sub*.10:0;
   const after=sub-disc-subDisc;
