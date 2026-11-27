@@ -565,7 +565,7 @@ a.night-tile:hover{border-color:var(--accent)}
       <div class="zipmsg" id="zipmsg">We mail Canada-wide. Try V3T 4M1 (BC) or M5V 2T6 (ON).</div>
       <div class="methods">
         <a href="#shop" class="meth main" data-cat="All"><span>📦</span><b>Mail delivery<em>Recommended</em></b><small>Canada-wide · 2–5 business days · ships in 24h</small></a>
-        <a href="#courier-area" class="meth"><span>🚚</span><b>Local courier</b><small>Surrey &amp; Langley · same day</small></a>
+        <a href="#courier-area" class="meth"><span>🚚</span><b>Local courier</b><small>Surrey &amp; Langley · Mon–Sat · 10 a.m.–8 p.m.</small></a>
       </div>
       <div class="trust">
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5 9-10"/></svg>Lab-tested products</span>
@@ -977,6 +977,7 @@ a.night-tile:hover{border-color:var(--accent)}
       <div>
         <span class="eyebrow">Need it today?</span>
         <h2 style="font-size:40px;margin:10px 0 6px">Same-day courier in Surrey &amp; Langley</h2>
+        <p><strong>Mon–Sat · 10 a.m.–8 p.m.</strong></p>
         <p style="color:var(--mut)">Mail shipping is $10 and local courier is $5, both free over $150. $100 minimum on every order. All prices in CAD.</p>
         <div class="zlist">
           <div class="zl"><span class="tm">25–40 min</span><b>Surrey Central</b><small>City Centre · Whalley · Guildford<br>V3T · V3R · V3S · V3W</small></div>
@@ -1029,7 +1030,7 @@ a.night-tile:hover{border-color:var(--accent)}
       <div><div class="logo" style="color:var(--text);margin-bottom:14px"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" stroke="#c8f435" stroke-width="2"/><path d="M10.5 22h11a4.2 4.2 0 0 0 .7-8.3A5.8 5.8 0 0 0 11 12.4 4.8 4.8 0 0 0 10.5 22z" fill="#c8f435"/></svg>CloudCulture</div><p style="max-width:300px">Licensed cannabis delivery. Premium flower, edibles, concentrates and vapes, brought to you.</p></div>
       <div><h4>Shop</h4><ul><li><a href="#shop-flower" data-cat="Flower">Flower</a></li><li><a href="#shop-edibles" data-cat="Edibles">Edibles</a></li><li><a href="#shop-concentrates" data-cat="Concentrates">Shatter</a></li><li><a href="#shop-carts" data-cat="Carts">Carts &amp; Pens</a></li></ul></div>
       <div><h4>Company</h4><ul><li><a href="#how">Delivery areas</a></li><li><a href="#faq">FAQ</a></li><li><a href="#">Careers</a></li><li><a href="#contact">Contact</a></li></ul></div>
-      <div id="contact"><h4>Contact</h4><ul><li>General support<br><a class="email-link" href="mailto:support@cloudculture.ca">support@cloudculture.ca</a></li><li>Order questions<br><a class="email-link" href="mailto:orders@cloudculture.ca">orders@cloudculture.ca</a></li><li>Mail ships Mon–Fri</li><li>Courier daily 9am – 10pm</li></ul></div>
+      <div id="contact"><h4>Contact</h4><ul><li>General support<br><a class="email-link" href="mailto:support@cloudculture.ca">support@cloudculture.ca</a></li><li>Order questions<br><a class="email-link" href="mailto:orders@cloudculture.ca">orders@cloudculture.ca</a></li><li>Mail ships Mon–Fri</li><li>Local courier Mon–Sat · 10 a.m.–8 p.m.</li></ul></div>
     </div>
     <div class="payrow"><span>Demo payment options</span><b>Interac e-Transfer</b><b>PayPal</b><b>USDC on Base</b></div>
     <div class="legal">
@@ -1311,7 +1312,7 @@ const MAILDAYS={V:[2,3],T:[3,5],S:[3,5],R:[3,5],K:[4,6],L:[4,6],M:[4,6],N:[4,6],
 const mailInfo=pc=>{const n=normPC(pc);if(!n||!PROV[n[0]])return null;return{prov:PROV[n[0]],days:MAILDAYS[n[0]],minAge:'GHJ'.includes(n[0])?21:19}};
 const FREQS=[['once','One-time order',0],['weekly','Every week',7],['biweekly','Every 2 weeks',14],['monthly','Every month',30],['bimonthly','Every 2 months',60]];
 const freqOf=k=>FREQS.find(f=>f[0]===k);
-const FO=[['mail','📦','Mail delivery','Discreet, tracked, adult signature · Canada-wide','Recommended'],['local','🚚','Local courier','Same day in Surrey & Langley · about 45 min',''],['pickup','🏪','Pickup','','Coming soon']];
+const FO=[['mail','📦','Mail delivery','Discreet, tracked, adult signature · Canada-wide','Recommended'],['local','🚚','Local courier','Surrey & Langley · Mon–Sat · 10 a.m.–8 p.m.',''],['pickup','🏪','Pickup','','Coming soon']];
 const PAY={
   etransfer:{name:'Interac e-Transfer',subtitle:'After placing an order',note:'In a live flow, e-Transfer instructions would appear after the order is placed.'},
   paypal:{name:'PayPal',subtitle:'Demo only',note:'This previews selecting PayPal. No PayPal connection is active.'},
@@ -1435,7 +1436,7 @@ function openCheckout(){
     ${ship?`<div class="fld"><label>Street address</label><input name="ad" autocomplete="off" placeholder="123 King George Blvd, Unit 4"></div>
     <div class="two"><div class="fld"><label>City</label><input name="city" autocomplete="off" placeholder="${isLocal?'Surrey':'City'}"></div><div class="fld"><label>Postal code</label><input name="zp" maxlength="7" autocapitalize="characters" autocomplete="off" placeholder="V3T 4M1" value="${zip}"></div></div>`:`<div class="fld"><label>Pickup location</label><select name="loc"><option>CloudCulture · Surrey (address placeholder)</option></select></div>`}
     ${isLocal?`<div class="fld"><label for="driver-notes">Delivery instructions (optional)</label><textarea id="driver-notes" name="driverNotes" rows="2" maxlength="250" placeholder="Rear house, use the side door"></textarea></div>
-    <div class="fld"><label>Delivery window</label><select name="win"><option>ASAP (~45 min)</option><option>Within 1–2 hours</option><option>Tonight 6–8pm</option><option>Tonight 8–10pm</option></select></div>`:''}
+    <div class="fld"><label for="courier-window">Delivery window</label><select id="courier-window" name="win" aria-describedby="courier-hours"><option>ASAP (~45 min)</option><option>Within 1–2 hours</option><option>Tonight 6–8 p.m.</option></select><p id="courier-hours" class="qnote">Local delivery hours · Mon–Sat · 10 a.m.–8 p.m.</p></div>`:''}
     ${t.recur?`<div class="fld"><label>First shipment date · then ${freqOf(freq)[1].toLowerCase()}</label><input name="sd" type="date" min="${tm}" value="${tm}"></div>`:''}
     <label style="font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.08em">Payment</label>
     <div class="pay" style="margin-top:6px">${Object.entries(PAY).map(([key,method])=>`<button type="button" data-pm="${key}" class="${payMethod===key?'on':''}" aria-pressed="${payMethod===key}"><b>${method.name}</b><small>${method.subtitle}</small></button>`).join('')}</div>
